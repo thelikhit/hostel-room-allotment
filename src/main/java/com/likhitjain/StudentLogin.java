@@ -13,4 +13,9 @@ public class StudentLogin {
     public void onClose(ActionEvent actionEvent) throws IOException {
         System.exit(0);
     }
+
+
+    public void onStudentSignup(ActionEvent actionEvent) throws IOException {
+        App.setRoot("studentSignup");
+    }
 }

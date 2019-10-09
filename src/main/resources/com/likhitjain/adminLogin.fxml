@@ -28,7 +28,7 @@
                 <PasswordField layoutX="228.0" layoutY="184.0" minWidth="150.0" promptText="Password"/>
                 <Button layoutX="228.0" layoutY="215.0" mnemonicParsing="false" text="Login"/>
                 <Hyperlink disable="true" layoutX="228.0" layoutY="246.0" prefHeight="22.0" prefWidth="164.0"
-                           text="Don't have an account? Sign up.">
+                           text="Don't have an account? Register.">
                     <font>
                         <Font size="11.0"/>
                     </font>

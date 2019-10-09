@@ -13,4 +13,8 @@ public class WardenLogin {
     public void onClose(ActionEvent actionEvent) {
         System.exit(0);
     }
+
+    public void onWardenSignUp(ActionEvent actionEvent) throws IOException {
+        App.setRoot("WardenSignup");
+    }
 }

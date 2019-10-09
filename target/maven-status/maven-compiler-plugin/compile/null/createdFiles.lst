@@ -1,7 +1,9 @@
 com\likhitjain\MainMenu.class
+com\likhitjain\WardenSignup.class
 com\likhitjain\App.class
 com\likhitjain\SecondaryController.class
 com\likhitjain\PrimaryController.class
+com\likhitjain\StudentSignup.class
 com\likhitjain\WardenLogin.class
 module-info.class
 com\likhitjain\StudentLogin.class
