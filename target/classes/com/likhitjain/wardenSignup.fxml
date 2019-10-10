@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.likhitjain.WardenSignup">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onBack" text="Back" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClose" text="Exit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ScrollPane prefHeight="368.0" prefWidth="600.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="368.0" prefWidth="600.0">
+               <children>
+                  <TextField id="empID" layoutX="214.0" layoutY="64.0" promptText="Employee ID" />
+                  <TextField id="fName" layoutX="214.0" layoutY="95.0" promptText="First Name" />
+                  <TextField id="lName" layoutX="214.0" layoutY="126.0" promptText="Last Name" />
+                  <TextField id="mobileNo" layoutX="214.0" layoutY="157.0" promptText="Mobile Number" />
+                  <PasswordField id="password" layoutX="214.0" layoutY="188.0" promptText="Password" />
+                  <Text layoutX="221.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Warden Registration Page" />
+                  <PasswordField id="confirmPassword" layoutX="214.0" layoutY="219.0" promptText="Confirm Password" />
+                  <Button id="register" layoutX="214.0" layoutY="261.0" mnemonicParsing="false" text="Register" />
+                  <Text fill="#f80606" layoutX="214.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note: All fields are mandatory">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</VBox>
