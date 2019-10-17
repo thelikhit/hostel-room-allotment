@@ -1,24 +1,22 @@
 package com.likhitjain;
 
-import javafx.event.ActionEvent;
-
 import java.io.IOException;
 
 public class MainMenu {
 
-    public void onStudentButtonClick(ActionEvent actionEvent) throws IOException {
+    public void onStudentButtonClick() throws IOException {
         App.setRoot("studentLogin");
     }
 
-    public void onWardenButtonClick(ActionEvent actionEvent) throws IOException {
+    public void onWardenButtonClick() throws IOException {
         App.setRoot("wardenLogin");
     }
 
-    public void onAdminButtonClick(ActionEvent actionEvent) throws IOException {
+    public void onAdminButtonClick() throws IOException {
         App.setRoot("adminLogin");
     }
 
-    public void onClose(ActionEvent actionEvent) {
+    public void onClose() {
         System.exit(0);
     }
 }

@@ -1,0 +1,4 @@
+Admin Login:
+Admin has no expression constraints on username and password. Can be whatever he wants.
+Decide featured for admin account.
+
