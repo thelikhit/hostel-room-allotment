@@ -4,9 +4,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import java.io.IOException;
 
-import java.sql.*;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class WardenLogin {
 
@@ -31,18 +34,25 @@ public class WardenLogin {
 
     public void onLoginButtonClick() throws SQLException, ClassNotFoundException {
 
-        String usernameText = empID.getText();
-        String passwordText = password.getText();
+        Warden wardenData = new Warden();
+        Warden wardenText = new Warden();
+
+        wardenText.setEmpID(empID.getText());
+        wardenText.setPasswd(password.getText());
 
         Connection connection = ConnectionManager.getConnection();
         Statement statement = connection.createStatement();
 
-        String QUERY ="SELECT *FROM Hostel.Warden WHERE emp_id='" + usernameText + "';";
+        String QUERY = "SELECT * FROM Hostel.Warden WHERE emp_id='" + wardenText.getEmpID() + "';";
 
         ResultSet resultSet = statement.executeQuery(QUERY);
         resultSet.next();
+
+        wardenData.setEmpID(resultSet.getString("emp_id"));
+        wardenData.setPasswd(resultSet.getString("passwd"));
+
         try {
-            if ((!resultSet.getString("emp_id").equals(usernameText)) || (!resultSet.getString("passwd").equals(passwordText))) {
+            if ((!wardenData.getEmpID().equals(wardenText.getEmpID()) || (!wardenData.getPasswd().equals(wardenText.getPasswd())))) {
                 System.out.println("Enter correct username and password");
                 empID.setStyle("-fx-border-color: red ;");
                 password.setStyle("-fx-border-color: red ;");
@@ -52,10 +62,15 @@ public class WardenLogin {
                 password.setStyle("-fx-border-color: green ;");
                 System.out.println("Login successful.");
                 System.out.println("Warden Details\n");
-                System.out.println("EID: " + resultSet.getString(1));
-                System.out.println("Name: " + resultSet.getString(2));
-                System.out.println("Contact: " + resultSet.getString(3));
-                System.out.println("Password: " + resultSet.getString(4));
+                wardenData.setEmpID(resultSet.getString(1));
+                wardenData.setwName(resultSet.getString(2));
+                wardenData.setContact(resultSet.getString(3));
+                wardenData.setPasswd(resultSet.getString(4));
+
+                System.out.println("EID: " + wardenData.getEmpID());
+                System.out.println("Name: " + wardenData.getwName());
+                System.out.println("Contact: " + wardenData.getContact());
+                System.out.println("Password: " + wardenData.getPasswd());
             }
         }
         catch (SQLException e) {

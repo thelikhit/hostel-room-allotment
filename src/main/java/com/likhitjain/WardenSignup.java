@@ -5,7 +5,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 /*
 TODO: 1. Data validation of all inputs before sending to database.
@@ -35,20 +37,24 @@ public class WardenSignup {
 
 
     public void onRegisterButtonClick() throws SQLException {
-        String empIDText = empID.getText();
-        String nameText = name.getText();
-        String mobileNoText = mobileNo.getText();
-        String passwordText = password.getText();
+
+        Warden wardenData = new Warden();
+
+        wardenData.setEmpID(empID.getText());
+        wardenData.setwName(name.getText());
+        wardenData.setContact(mobileNo.getText());
+        wardenData.setPasswd(password.getText());
 
         Connection connection = ConnectionManager.getConnection() ;
 
         String QUERY = "INSERT INTO Hostel.Warden VALUES (?,?,?,?);";
+
         PreparedStatement preparedStatement = connection.prepareStatement(QUERY);
 
-        preparedStatement.setString(1, empIDText);
-        preparedStatement.setString(2, nameText);
-        preparedStatement.setString(3, mobileNoText);
-        preparedStatement.setString(4, passwordText);
+        preparedStatement.setString(1, wardenData.getEmpID());
+        preparedStatement.setString(2, wardenData.getwName());
+        preparedStatement.setString(3, wardenData.getContact());
+        preparedStatement.setString(4, wardenData.getPasswd());
 
         int rowsAffected = preparedStatement.executeUpdate();
         System.out.println("Rows Affected: " +rowsAffected);

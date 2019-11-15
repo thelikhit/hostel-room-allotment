@@ -1,12 +1,15 @@
 com\likhitjain\ConnectionManager.class
+com\likhitjain\Warden.class
+com\likhitjain\Room.class
 com\likhitjain\Validation.class
 com\likhitjain\WardenLogin.class
 module-info.class
 com\likhitjain\StudentLogin.class
 com\likhitjain\AdminLogin.class
+com\likhitjain\RoomType.class
+com\likhitjain\Student.class
 com\likhitjain\MainMenu.class
 com\likhitjain\WardenSignup.class
 com\likhitjain\App.class
-com\likhitjain\SecondaryController.class
-com\likhitjain\PrimaryController.class
 com\likhitjain\StudentSignup.class
+com\likhitjain\Block.class
