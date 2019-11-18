@@ -5,11 +5,14 @@ com\likhitjain\Validation.class
 com\likhitjain\WardenLogin.class
 module-info.class
 com\likhitjain\StudentLogin.class
+com\likhitjain\WardenHome.class
 com\likhitjain\AdminLogin.class
+com\likhitjain\WardenDetailsForStudents.class
 com\likhitjain\RoomType.class
 com\likhitjain\Student.class
 com\likhitjain\MainMenu.class
 com\likhitjain\WardenSignup.class
 com\likhitjain\App.class
 com\likhitjain\StudentSignup.class
+com\likhitjain\StudentHome.class
 com\likhitjain\Block.class

@@ -30,7 +30,6 @@ public class StudentLogin {
         App.setRoot("studentSignup");
     }
 
-
     public void onLoginButtonClick() throws SQLException {
 
         Student studentText = new Student();
@@ -59,24 +58,11 @@ public class StudentLogin {
                 usn.setStyle("-fx-border-color: green ;");
                 password.setStyle("-fx-border-color: green ;");
                 System.out.println("Credentials OK. Login successful.");
-                System.out.println("Student Details\n");
-                System.out.println("USN: " + resultSet.getString(1));
-                System.out.println("Name: " + resultSet.getString(2) + " " + resultSet.getString(3));
-                System.out.println("Password: " + resultSet.getString(4));
-                System.out.println("DOB: " + resultSet.getString(5));
-                System.out.println("Student Mobile: " + resultSet.getString(15));
-                System.out.println("Department: " + resultSet.getString(6));
-                System.out.println("Semester: " + resultSet.getInt(7));
-                System.out.println("GPA: " + resultSet.getDouble(8));
-                System.out.println("Gender: " + resultSet.getString(9));
-                System.out.println("Guardian Name: " + resultSet.getString(10));
-                System.out.println("Guardian Contact: " + resultSet.getString(11));
-                System.out.println("Permanent Address: " + resultSet.getString(12));
-                System.out.println("Warden ID: " + resultSet.getString(13));
-                System.out.println("Room ID: " + resultSet.getString(14));
+                StudentHome.setStudentHelloMessage(resultSet.getString(2), resultSet.getString(1));
+                App.setRoot("studentHome");
             }
         }
-        catch (SQLException e) {
+        catch (IOException e) {
             System.out.println("Enter correct username and password");
             usn.setStyle("-fx-border-color: red ;");
             password.setStyle("-fx-border-color: red ;");

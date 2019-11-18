@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.likhitjain.WardenDetailsForStudent">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onBack" text="Back" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" onAction="#onLogout" text="Logout" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane prefHeight="367.0" prefWidth="600.0">
+         <children>
+            <Text layoutX="250.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your warden details are: " textAlignment="CENTER" />
+            <Text fx:id="wardenName" layoutX="286.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100" textAlignment="CENTER" />
+            <Text fx:id="wardenID" layoutX="250.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="100" textAlignment="CENTER" />
+            <Text fx:id="wardenContact" layoutX="250.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="100" textAlignment="CENTER" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
