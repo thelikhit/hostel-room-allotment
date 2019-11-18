@@ -34,10 +34,22 @@
       </MenuBar>
       <AnchorPane prefHeight="367.0" prefWidth="600.0">
          <children>
-            <Text layoutX="250.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your warden details are: " textAlignment="CENTER" />
-            <Text fx:id="wardenName" layoutX="286.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100" textAlignment="CENTER" />
-            <Text fx:id="wardenID" layoutX="250.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="100" textAlignment="CENTER" />
-            <Text fx:id="wardenContact" layoutX="250.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="100" textAlignment="CENTER" />
+            <Text layoutX="224.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your warden details are: " textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <Text fx:id="wardenNameText" layoutX="154.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="305.0">
+               <font>
+                  <Font size="16.0" />
+               </font></Text>
+            <Text fx:id="wardenIDText" layoutX="154.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="305.0">
+               <font>
+                  <Font size="16.0" />
+               </font></Text>
+            <Text fx:id="wardenContactText" layoutX="257.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="100">
+               <font>
+                  <Font size="16.0" />
+               </font></Text>
          </children>
       </AnchorPane>
    </children>

@@ -31,7 +31,7 @@
                   <Font size="9.0" />
                </font>
             </Button>
-            <Button layoutX="330.0" layoutY="265.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="90.0" text="Roommate Details" textAlignment="CENTER" wrapText="true">
+            <Button layoutX="330.0" layoutY="265.0" mnemonicParsing="false" onAction="#onRoommateDetailsButtonClick" prefHeight="54.0" prefWidth="90.0" text="Roommate Details" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="9.0" />
                </font>
@@ -40,7 +40,7 @@
                <font>
                   <Font size="9.0" />
                </font></Button>
-            <Text fx:id="welcomeDetailsText" layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome student!!" wrappingWidth="158.51611328125">
+            <Text fx:id="welcomeDetailsText" layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome student!!" wrappingWidth="200.0">
                <font>
                   <Font size="18.0" />
                </font></Text>
