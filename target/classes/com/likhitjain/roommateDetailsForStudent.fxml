@@ -2,26 +2,19 @@
 
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:controller="com.likhitjain.RoommateDetailsForStudent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.likhitjain.RoommateDetailsForStudent">
    <children>
       <MenuBar>
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#onBack" text="Back" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onLogout" text="Logout" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close" />
             </items>
           </Menu>
         </menus>
@@ -30,11 +23,11 @@
          <children>
             <Text layoutX="235.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Roommate Details: " />
             <Text fx:id="name1Text" layoutX="200.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="200.0" />
-            <Text fx:id="dept1Text" layoutX="200.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="200.0" />
-            <Text fx:id="contact1Text" layoutX="200.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="200.0" />
-            <Text fx:id="name2Text" layoutX="199.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="200.0" />
-            <Text fx:id="dept2Text" layoutX="199.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="200.0" />
-            <Text fx:id="contact2Text" layoutX="200.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="200.0" />
+            <Text fx:id="dept1Text" layoutX="200.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="200.0" />
+            <Text fx:id="contact1Text" layoutX="200.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="200.0" />
+            <Text fx:id="name2Text" layoutX="199.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="200.0" />
+            <Text fx:id="dept2Text" layoutX="199.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="200.0" />
+            <Text fx:id="contact2Text" layoutX="200.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="200.0" />
          </children></AnchorPane>
    </children>
 </VBox>

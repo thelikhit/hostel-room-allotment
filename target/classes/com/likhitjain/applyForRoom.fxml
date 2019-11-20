@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.likhitjain.ApplyForRoom">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane prefHeight="368.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="roomTypeTable" prefHeight="175.0" prefWidth="600.0">
+              <columns>
+                  <TableColumn fx:id="roomTypeIDColumn" prefWidth="110.0" style="-fx-alignment: CENTER;" text="Room Type ID" />
+                  <TableColumn fx:id="occupancyColumn" prefWidth="110.0" text="Occupancy" style="-fx-alignment: CENTER;"/>
+                  <TableColumn fx:id="attachedBathroomColumn" prefWidth="110.0" text="Bathroom Attached" style="-fx-alignment: CENTER;"/>
+                  <TableColumn fx:id="roomFeesColumn" minWidth="8.0" prefWidth="120.0" text="Fees per year" style="-fx-alignment: CENTER;"/>
+                  <TableColumn fx:id="roomDescriptionColumn" prefWidth="135.0" text="Room Description" style="-fx-alignment: CENTER;"/>
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

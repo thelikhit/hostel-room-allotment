@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
@@ -97,5 +98,9 @@ public class StudentHome {
 
     public void onClose() {
         System.exit(0);
+    }
+
+    public void onApplyForRoomButtonClick(ActionEvent actionEvent) throws IOException {
+        App.setRoot("applyForRoom");
     }
 }

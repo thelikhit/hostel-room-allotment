@@ -3,6 +3,8 @@ package com.likhitjain;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
+
 public class RoommateDetailsForStudent {
 
     private static String roommateName1, roommateName2;
@@ -51,5 +53,17 @@ public class RoommateDetailsForStudent {
             dept2Text.setText(roommateDept2);
             contact2Text.setText(roommateContact2);
         }
+    }
+
+    public void onBack() throws IOException {
+        App.setRoot("studentHome");
+    }
+
+    public void onClose() throws IOException {
+        App.setRoot("studentHome");
+    }
+
+    public void onLogout() throws IOException {
+        App.setRoot("mainMenu");
     }
 }

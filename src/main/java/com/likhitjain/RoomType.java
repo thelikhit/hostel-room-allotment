@@ -1,7 +1,5 @@
 package com.likhitjain;
 
-import javafx.scene.control.cell.PropertyValueFactory;
-
 public class RoomType {
     private String rTypeID;
     private String occupancy;
@@ -17,11 +15,11 @@ public class RoomType {
         this.roomDesc = roomDesc;
     }
 
-    public String getrTypeID() {
+    public String getRTypeID() {
         return rTypeID;
     }
 
-    public void setrTypeID(String rTypeID) {
+    public void setRTypeID(String rTypeID) {
         this.rTypeID = rTypeID;
     }
 
