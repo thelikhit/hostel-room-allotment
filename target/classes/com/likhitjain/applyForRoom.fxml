@@ -1,42 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.collections.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.likhitjain.ApplyForRoom">
-   <children>
-      <MenuBar>
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.likhitjain.ApplyForRoom">
+
+    <MenuBar>
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" text="Back" onAction="#onBack"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" text="Logout" onAction="#onLogout"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" text="Close" onAction="#onClose"/>
+        </Menu>
+    </MenuBar>
+    <AnchorPane prefHeight="368.0" prefWidth="600.0">
+        <TableView fx:id="roomTypeTable" prefHeight="170.0" prefWidth="600.0">
+            <columns>
+                <TableColumn fx:id="roomTypeIDColumn" prefWidth="110.0" style="-fx-alignment: CENTER;"
+                             text="Room Type ID"/>
+                <TableColumn fx:id="occupancyColumn" prefWidth="100.0" style="-fx-alignment: CENTER;"
+                             text="Occupancy"/>
+                <TableColumn fx:id="attachedBathroomColumn" prefWidth="155.0" style="-fx-alignment: CENTER;"
+                             text="Bathroom Attached"/>
+                <TableColumn fx:id="roomFeesColumn" minWidth="8.0" prefWidth="100.0" style="-fx-alignment: CENTER;"
+                             text="Fees per year"/>
+                <TableColumn fx:id="roomDescriptionColumn" prefWidth="134.0" style="-fx-alignment: CENTER;"
+                             text="Room Description"/>
+            </columns>
+        </TableView>
+        <Text layoutX="230.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select preference:">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Text>
+        <ComboBox fx:id="firstRoomPrefText" layoutX="221.0" layoutY="200.0" prefWidth="160.0"
+                  promptText="1st Preference">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="RT10"/>
+                    <String fx:value="RT11"/>
+                    <String fx:value="RT20"/>
+                    <String fx:value="RT21"/>
+                    <String fx:value="RT30"/>
+                    <String fx:value="RT31"/>
+                </FXCollections>
             </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+        </ComboBox>
+        <ComboBox fx:id="secondRoomPrefText" layoutX="221.0" layoutY="232.0" prefWidth="160.0"
+                  promptText="2nd Preference">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="RT10"/>
+                    <String fx:value="RT11"/>
+                    <String fx:value="RT20"/>
+                    <String fx:value="RT21"/>
+                    <String fx:value="RT30"/>
+                    <String fx:value="RT31"/>
+                </FXCollections>
             </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+        </ComboBox>
+        <ComboBox fx:id="thirdRoomPrefText" layoutX="221.0" layoutY="264.0" prefWidth="160.0"
+                  promptText="3rd Preference">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="RT10"/>
+                    <String fx:value="RT11"/>
+                    <String fx:value="RT20"/>
+                    <String fx:value="RT21"/>
+                    <String fx:value="RT30"/>
+                    <String fx:value="RT31"/>
+                </FXCollections>
             </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <AnchorPane prefHeight="368.0" prefWidth="600.0">
-         <children>
-            <TableView fx:id="roomTypeTable" prefHeight="175.0" prefWidth="600.0">
-              <columns>
-                  <TableColumn fx:id="roomTypeIDColumn" prefWidth="110.0" style="-fx-alignment: CENTER;" text="Room Type ID" />
-                  <TableColumn fx:id="occupancyColumn" prefWidth="110.0" text="Occupancy" style="-fx-alignment: CENTER;"/>
-                  <TableColumn fx:id="attachedBathroomColumn" prefWidth="110.0" text="Bathroom Attached" style="-fx-alignment: CENTER;"/>
-                  <TableColumn fx:id="roomFeesColumn" minWidth="8.0" prefWidth="120.0" text="Fees per year" style="-fx-alignment: CENTER;"/>
-                  <TableColumn fx:id="roomDescriptionColumn" prefWidth="135.0" text="Room Description" style="-fx-alignment: CENTER;"/>
-              </columns>
-            </TableView>
-         </children>
-      </AnchorPane>
-   </children>
+        </ComboBox>
+        <Button layoutX="268.0" layoutY="304.0" mnemonicParsing="false" text="Apply" onAction="#onApplyButtonClick"/>
+    </AnchorPane>
 </VBox>

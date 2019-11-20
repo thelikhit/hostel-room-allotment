@@ -61,19 +61,11 @@ public class WardenLogin {
                 empID.setStyle("-fx-border-color: green ;");
                 password.setStyle("-fx-border-color: green ;");
                 System.out.println("Login successful.");
-                System.out.println("Warden Details\n");
-                wardenData.setEmpID(resultSet.getString(1));
-                wardenData.setwName(resultSet.getString(2));
-                wardenData.setContact(resultSet.getString(3));
-                wardenData.setPasswd(resultSet.getString(4));
-
-                System.out.println("EID: " + wardenData.getEmpID());
-                System.out.println("Name: " + wardenData.getwName());
-                System.out.println("Contact: " + wardenData.getContact());
-                System.out.println("Password: " + wardenData.getPasswd());
+                WardenHome.setWardenHelloMessage(resultSet.getString("w_name"), resultSet.getString("emp_id"));
+                App.setRoot("wardenHome");
             }
         }
-        catch (SQLException e) {
+        catch (SQLException | IOException e) {
             System.out.println("Enter correct username and password");
             empID.setStyle("-fx-border-color: red ;");
             password.setStyle("-fx-border-color: red ;");

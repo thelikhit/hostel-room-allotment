@@ -86,11 +86,16 @@ public class StudentHome {
             String contact2 = resultSet.getString("mobile_no");
             String dept2 = resultSet.getString("department");
             RoommateDetailsForStudent.setRoommateDetails(name1, dept1, contact1, name2, dept2, contact2);
-
-            App.setRoot("roommateDetailsForStudent");
         }
+        App.setRoot("roommateDetailsForStudent");
     }
 
+    public void onVacateRoomButtonClick() throws IOException {
+
+        // if room is already vacated
+        VacateRoom.setStudentUSN(studentUSN);
+        App.setRoot("vacateRoom");
+    }
 
     public void onLogout() throws IOException {
         App.setRoot("mainMenu");
@@ -100,7 +105,9 @@ public class StudentHome {
         System.exit(0);
     }
 
-    public void onApplyForRoomButtonClick(ActionEvent actionEvent) throws IOException {
+    public void onApplyForRoomButtonClick() throws IOException {
+
+        // if room is already alloted.
         App.setRoot("applyForRoom");
     }
 }

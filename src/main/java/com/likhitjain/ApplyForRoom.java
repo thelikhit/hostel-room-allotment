@@ -4,14 +4,25 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+// TODO: Allocation algorithm
+
 public class ApplyForRoom implements Initializable {
+
+    @FXML
+    public ComboBox firstRoomPrefText;
+    @FXML
+    public ComboBox secondRoomPrefText;
+    @FXML
+    public ComboBox thirdRoomPrefText;
 
     @FXML
     private TableView<RoomType> roomTypeTable = new TableView<>();
@@ -25,7 +36,6 @@ public class ApplyForRoom implements Initializable {
     private TableColumn<RoomType, Integer> roomFeesColumn = new TableColumn<>("Fees per year");
     @FXML
     private TableColumn<RoomType, String> roomDescriptionColumn = new TableColumn<>("Room Description");
-
 
 
     @Override
@@ -52,6 +62,22 @@ public class ApplyForRoom implements Initializable {
         return FXCollections.observableArrayList(roomType1, roomType2, roomType3, roomType4, roomType5, roomType6);
     }
 
+    public void onApplyButtonClick() {
+        System.out.println(firstRoomPrefText.getValue());
+        System.out.println(secondRoomPrefText.getValue());
+        System.out.println(thirdRoomPrefText.getValue());
+    }
 
+    public void onBack() throws IOException {
+        App.setRoot("studentHome");
+    }
 
+    public void onLogout() throws IOException {
+        App.setRoot("mainMenu");
+
+    }
+
+    public void onClose() {
+        System.exit(0);
+    }
 }

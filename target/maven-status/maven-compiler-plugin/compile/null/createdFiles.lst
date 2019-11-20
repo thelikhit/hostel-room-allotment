@@ -1,5 +1,6 @@
 com\likhitjain\ApplyForRoom.class
 com\likhitjain\ConnectionManager.class
+com\likhitjain\roomDetailsForStudent.class
 com\likhitjain\Warden.class
 com\likhitjain\Room.class
 com\likhitjain\Validation.class
@@ -14,7 +15,10 @@ com\likhitjain\Student.class
 com\likhitjain\MainMenu.class
 com\likhitjain\WardenSignup.class
 com\likhitjain\App.class
+com\likhitjain\AvailableRooms.class
 com\likhitjain\StudentSignup.class
 com\likhitjain\WardenDetailsForStudent.class
 com\likhitjain\StudentHome.class
+com\likhitjain\VacateRoom.class
 com\likhitjain\Block.class
+com\likhitjain\StudentDetailsForWarden.class
