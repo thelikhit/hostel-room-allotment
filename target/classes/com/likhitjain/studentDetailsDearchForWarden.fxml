@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane prefHeight="368.0" prefWidth="600.0">
+         <children>
+            <TextField layoutX="207.0" layoutY="14.0" promptText="Enter Student's USN" />
+            <Button layoutX="268.0" layoutY="48.0" mnemonicParsing="false" text="Search" />
+            <TableView fx:id="studentDetailsTable" layoutX="5.0" layoutY="115.0" prefHeight="200.0" prefWidth="592.0">
+              <columns>
+                  <TableColumn prefWidth="75.0" text="USN" fx:id="usnColumn"/>
+                <TableColumn prefWidth="75.0" text="First Name" fx:id="fNameColumn"/>
+                <TableColumn prefWidth="75.0" text="Last Name" fx:id="lNameColumn"/>
+                  <TableColumn prefWidth="75.0" text="Room" fx:id="roomColumn"/>
+                  <TableColumn prefWidth="75.0" text="Contact" fx:id="contactColumn"/>
+                  <TableColumn prefWidth="75.0" text="passwd" visible="false" fx:id="passwdColumn"/>
+                  <TableColumn prefWidth="75.0" text="dob" visible="false" fx:id="dobColumn"/>
+                  <TableColumn prefWidth="75.0" text="Dept" fx:id="deptColumn"/>
+                  <TableColumn prefWidth="75.0" text="Semester" fx:id="semColumn"/>
+                  <TableColumn prefWidth="75.0" text="gpa" visible="false" fx:id="gpaColumn"/>
+                  <TableColumn prefWidth="75.0" text="Gender" fx:id="genderColumn"/>
+                  <TableColumn prefWidth="75.0" text="Guardian Name" fx:id="gNameColumn"/>
+                  <TableColumn prefWidth="75.0" text="Guardian Contact" fx:id="gContactColumn"/>
+                  <TableColumn prefWidth="75.0" text="Permanent Address" fx:id="permAddColumn"/>
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

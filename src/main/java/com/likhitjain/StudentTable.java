@@ -1,37 +1,31 @@
 package com.likhitjain;
 
-class Student {
+import javafx.beans.property.SimpleStringProperty;
+
+public class StudentTable {
     private String usn;
     private String fName;
     private String lName;
-    private String passwd;
-    private String dob;
     private String department;
     private String semester;
-    private double gpa;
-    private String gender;
     private String guardianName;
     private String guardianContact;
     private String permAddress;
+    private String contact;
+    private String room;
 
-    public String getWarden() {
-        return warden;
-    }
-
-    public void setWarden(String warden) {
-        this.warden = warden;
-    }
-
-    public String getRoom() {
-        return room;
-    }
-
-    public void setRoom(String room) {
+    public StudentTable(String usn, String fName, String lName, String department, String semester, String guardianName, String guardianContact, String permAddress, String contact, String room) {
+        this.usn = usn;
+        this.fName = fName;
+        this.lName = lName;
+        this.department = department;
+        this.semester = semester;
+        this.guardianName = guardianName;
+        this.guardianContact = guardianContact;
+        this.permAddress = permAddress;
+        this.contact = contact;
         this.room = room;
     }
-
-    private String warden;
-    private String room;
 
     public String getUsn() {
         return usn;
@@ -41,36 +35,20 @@ class Student {
         this.usn = usn;
     }
 
-    public String getfName() {
+    public String getFName() {
         return fName;
     }
 
-    public void setfName(String fName) {
+    public void setFName(String fName) {
         this.fName = fName;
     }
 
-    public String getlName() {
+    public String getLName() {
         return lName;
     }
 
-    public void setlName(String lName) {
+    public void setLName(String lName) {
         this.lName = lName;
-    }
-
-    public String getPasswd() {
-        return passwd;
-    }
-
-    public void setPasswd(String passwd) {
-        this.passwd = passwd;
-    }
-
-    public String getDob() {
-        return dob;
-    }
-
-    public void setDob(String dob) {
-        this.dob = dob;
     }
 
     public String getDepartment() {
@@ -87,22 +65,6 @@ class Student {
 
     public void setSemester(String semester) {
         this.semester = semester;
-    }
-
-    public double getGpa() {
-        return gpa;
-    }
-
-    public void setGpa(double gpa) {
-        this.gpa = gpa;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
     }
 
     public String getGuardianName() {
@@ -127,5 +89,21 @@ class Student {
 
     public void setPermAddress(String permAddress) {
         this.permAddress = permAddress;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getRoom() {
+        return room;
+    }
+
+    public void setRoom(String room) {
+        this.room = room;
     }
 }

@@ -13,9 +13,9 @@ import java.sql.Statement;
 public class StudentLogin {
 
     @FXML
-    public TextField usn;
+    public TextField usnText;
     @FXML
-    public PasswordField password;
+    public PasswordField passwordText;
 
     public void onBack() throws IOException {
         App.setRoot("mainMenu");
@@ -32,31 +32,28 @@ public class StudentLogin {
 
     public void onLoginButtonClick() throws SQLException {
 
-        Student studentText = new Student();
-        Student studentData = new Student();
-
-        studentText.setUsn(usn.getText());
-        studentText.setPasswd(password.getText());
+        String usn = usnText.getText();
+        String password = passwordText.getText();
 
         Connection connection = ConnectionManager.getConnection();
         Statement statement = connection.createStatement();
 
-        String QUERY = "SELECT * FROM Hostel.Student WHERE usn='" + studentText.getUsn() + "';";
+        String QUERY = "SELECT * FROM Hostel.Student WHERE usn='" + usn + "';";
 
         ResultSet resultSet = statement.executeQuery(QUERY);
         resultSet.next();
 
-        studentData.setUsn(resultSet.getString("usn"));
-        studentData.setPasswd(resultSet.getString("passwd"));
+        resultSet.getString("usn");
+        resultSet.getString("passwd");
 
         try {
-            if (!studentData.getUsn().equals(studentText.getUsn()) || (!studentData.getPasswd().equals(studentText.getPasswd()))) {
-                usn.setStyle("-fx-border-color: red ;");
-                password.setStyle("-fx-border-color: red ;");
+            if (!usn.equals(resultSet.getString("usn")) || (!password.equals(resultSet.getString("passwd")))) {
+                usnText.setStyle("-fx-border-color: red ;");
+                passwordText.setStyle("-fx-border-color: red ;");
                 System.out.println("Enter correct username and password");
             } else {
-                usn.setStyle("-fx-border-color: green ;");
-                password.setStyle("-fx-border-color: green ;");
+                usnText.setStyle("-fx-border-color: green ;");
+                passwordText.setStyle("-fx-border-color: green ;");
                 System.out.println("Credentials OK. Login successful.");
                 StudentHome.setStudentHelloMessage(resultSet.getString(2), resultSet.getString(1));
                 App.setRoot("studentHome");
@@ -64,8 +61,8 @@ public class StudentLogin {
         }
         catch (IOException e) {
             System.out.println("Enter correct username and password");
-            usn.setStyle("-fx-border-color: red ;");
-            password.setStyle("-fx-border-color: red ;");
+            usnText.setStyle("-fx-border-color: red ;");
+            passwordText.setStyle("-fx-border-color: red ;");
         }
         statement.close();
         connection.close();

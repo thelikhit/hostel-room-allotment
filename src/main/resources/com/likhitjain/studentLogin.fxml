@@ -20,8 +20,8 @@
         </Menu>
     </MenuBar>
     <AnchorPane prefHeight="368.0" prefWidth="600.0">
-        <TextField fx:id="usn" layoutX="228.0" layoutY="153.0" minWidth="150.0" promptText="USN"/>
-        <PasswordField fx:id="password" layoutX="228.0" layoutY="184.0" minWidth="150.0" promptText="Password"/>
+        <TextField fx:id="usnText" layoutX="228.0" layoutY="153.0" minWidth="150.0" promptText="USN"/>
+        <PasswordField fx:id="passwordText" layoutX="228.0" layoutY="184.0" minWidth="150.0" promptText="Password"/>
         <Button id="login" layoutX="228.0" layoutY="215.0" mnemonicParsing="false" text="Login"
                 onAction="#onLoginButtonClick"/>
         <Hyperlink layoutX="228.0" layoutY="246.0" onAction="#onStudentSignup" prefHeight="22.0"

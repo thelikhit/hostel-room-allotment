@@ -14,11 +14,11 @@ import java.sql.Statement;
 public class WardenLogin {
 
     @FXML
-    public TextField empID;
+    public TextField empIDText;
     @FXML
-    public PasswordField password;
+    public PasswordField passwordText;
     @FXML
-    public Button login;
+    public Button loginButton;
 
     public void onBack() throws IOException {
         App.setRoot("mainMenu");
@@ -32,34 +32,28 @@ public class WardenLogin {
         App.setRoot("WardenSignup");
     }
 
-    public void onLoginButtonClick() throws SQLException, ClassNotFoundException {
+    public void onLoginButtonClick() throws SQLException {
 
-        Warden wardenData = new Warden();
-        Warden wardenText = new Warden();
-
-        wardenText.setEmpID(empID.getText());
-        wardenText.setPasswd(password.getText());
+        String empID = empIDText.getText();
+        String password = passwordText.getText();
 
         Connection connection = ConnectionManager.getConnection();
         Statement statement = connection.createStatement();
 
-        String QUERY = "SELECT * FROM Hostel.Warden WHERE emp_id='" + wardenText.getEmpID() + "';";
+        String QUERY = "SELECT * FROM Hostel.Warden WHERE emp_id='" + empID + "';";
 
         ResultSet resultSet = statement.executeQuery(QUERY);
         resultSet.next();
 
-        wardenData.setEmpID(resultSet.getString("emp_id"));
-        wardenData.setPasswd(resultSet.getString("passwd"));
-
         try {
-            if ((!wardenData.getEmpID().equals(wardenText.getEmpID()) || (!wardenData.getPasswd().equals(wardenText.getPasswd())))) {
+            if ((!empID.equals(resultSet.getString("emp_id")) || (!password.equals(resultSet.getString("passwd"))))) {
                 System.out.println("Enter correct username and password");
-                empID.setStyle("-fx-border-color: red ;");
-                password.setStyle("-fx-border-color: red ;");
+                empIDText.setStyle("-fx-border-color: red ;");
+                passwordText.setStyle("-fx-border-color: red ;");
         }
             else {
-                empID.setStyle("-fx-border-color: green ;");
-                password.setStyle("-fx-border-color: green ;");
+                empIDText.setStyle("-fx-border-color: green ;");
+                passwordText.setStyle("-fx-border-color: green ;");
                 System.out.println("Login successful.");
                 WardenHome.setWardenHelloMessage(resultSet.getString("w_name"), resultSet.getString("emp_id"));
                 App.setRoot("wardenHome");
@@ -67,8 +61,8 @@ public class WardenLogin {
         }
         catch (SQLException | IOException e) {
             System.out.println("Enter correct username and password");
-            empID.setStyle("-fx-border-color: red ;");
-            password.setStyle("-fx-border-color: red ;");
+            empIDText.setStyle("-fx-border-color: red ;");
+            passwordText.setStyle("-fx-border-color: red ;");
         }
 
         statement.close();

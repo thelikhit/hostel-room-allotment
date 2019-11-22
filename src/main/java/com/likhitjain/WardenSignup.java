@@ -17,15 +17,15 @@ TODO: 1. Data validation of all inputs before sending to database.
 public class WardenSignup {
 
     @FXML
-    public TextField empID;
+    public TextField empIDText;
     @FXML
-    public TextField mobileNo;
+    public TextField mobileNoText;
     @FXML
-    public PasswordField password;
+    public PasswordField passwordText;
     @FXML
-    public PasswordField confirmPassword;
+    public PasswordField confirmPasswordText;
     @FXML
-    public TextField name;
+    public TextField nameText;
 
     public void onBack() throws IOException {
         App.setRoot("wardenLogin");
@@ -38,12 +38,10 @@ public class WardenSignup {
 
     public void onRegisterButtonClick() throws SQLException {
 
-        Warden wardenData = new Warden();
-
-        wardenData.setEmpID(empID.getText());
-        wardenData.setwName(name.getText());
-        wardenData.setContact(mobileNo.getText());
-        wardenData.setPasswd(password.getText());
+        String empID = empIDText.getText();
+        String name = nameText.getText();
+        String mobileNo = mobileNoText.getText();
+        String password = passwordText.getText();
 
         Connection connection = ConnectionManager.getConnection() ;
 
@@ -51,10 +49,10 @@ public class WardenSignup {
 
         PreparedStatement preparedStatement = connection.prepareStatement(QUERY);
 
-        preparedStatement.setString(1, wardenData.getEmpID());
-        preparedStatement.setString(2, wardenData.getwName());
-        preparedStatement.setString(3, wardenData.getContact());
-        preparedStatement.setString(4, wardenData.getPasswd());
+        preparedStatement.setString(1, empID);
+        preparedStatement.setString(2, name);
+        preparedStatement.setString(3, mobileNo);
+        preparedStatement.setString(4, password);
 
         int rowsAffected = preparedStatement.executeUpdate();
         System.out.println("Rows Affected: " +rowsAffected);

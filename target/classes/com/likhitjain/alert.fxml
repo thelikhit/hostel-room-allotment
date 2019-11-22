@@ -1,0 +1,36 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+
+<!--<?import javafx.scene.text.*?>-->
+<!--<?import java.lang.*?>-->
+<!--<?import java.util.*?>-->
+<!--<?import javafx.scene.*?>-->
+<!--<?import javafx.scene.control.*?>-->
+<!--<?import javafx.scene.layout.*?>-->
+
+<!--<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.likhitjain.Alert">-->
+<!--   <children>-->
+<!--      <MenuBar>-->
+<!--        <menus>-->
+<!--          <Menu mnemonicParsing="false" text="File">-->
+<!--            <items>-->
+<!--                  <MenuItem mnemonicParsing="false" text="Back" />-->
+<!--                  <SeparatorMenuItem mnemonicParsing="false" />-->
+<!--                  <MenuItem mnemonicParsing="false" text="Logout" />-->
+<!--                  <SeparatorMenuItem mnemonicParsing="false" />-->
+<!--              <MenuItem mnemonicParsing="false" text="Close" />-->
+<!--            </items>-->
+<!--          </Menu>-->
+<!--        </menus>-->
+<!--      </MenuBar>-->
+<!--      <AnchorPane prefHeight="376.0" prefWidth="600.0">-->
+<!--         <children>-->
+<!--            <Text fx:id="alertMessageText" layoutX="64.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alert" textAlignment="CENTER" wrappingWidth="500.0">-->
+<!--               <font>-->
+<!--                  <Font size="18.0" />-->
+<!--               </font>-->
+<!--            </Text>-->
+<!--            <Button layoutX="293.0" layoutY="52.0" mnemonicParsing="false" onAction="#onAlertOK" text="OK" />-->
+<!--         </children>-->
+<!--      </AnchorPane>-->
+<!--   </children>-->
+<!--</VBox>-->

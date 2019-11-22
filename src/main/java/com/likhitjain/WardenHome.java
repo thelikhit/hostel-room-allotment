@@ -1,6 +1,5 @@
 package com.likhitjain;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
@@ -19,7 +18,7 @@ public class WardenHome {
     }
 
     public void initialize() {
-        String welcomeText = "Hello, " + wardenName + "(" + wardenID + ")";
+        String welcomeText = wardenName + " (" + wardenID + ")";
         welcomeDetailsText.setText(welcomeText);
     }
 
@@ -31,20 +30,15 @@ public class WardenHome {
         System.exit(0);
     }
 
-    public void onSearchByUSNButtonClick(ActionEvent actionEvent) throws IOException {
-
-
-        App.setRoot("searchByUSNForWarden");
+    public void onSearchByUSNButtonClick() throws IOException {
+        App.setRoot("studentDetailsSearchForWarden");
     }
 
-    public void onSearchByRIDButtonClick(ActionEvent actionEvent) throws IOException {
-
-        App.setRoot("searchByRIDForWarden");
+    public void onSearchByRIDButtonClick() throws IOException {
+        App.setRoot("roomDetailsForWarden");
     }
 
-    public void onAvailableRoomsButtonClick(ActionEvent actionEvent) throws IOException {
-
-
+    public void onAvailableRoomsButtonClick() throws IOException {
         App.setRoot("availableRooms");
     }
 }

@@ -5,7 +5,6 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 
-
 public class WardenDetailsForStudent {
 
     private static String wardenName;
@@ -18,7 +17,6 @@ public class WardenDetailsForStudent {
     public Text wardenIDText;
     @FXML
     public Text wardenContactText;
-
 
     static void setWardenDetails(String ID, String name, String contact) {
         wardenName = name;

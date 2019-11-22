@@ -66,6 +66,8 @@ public class ApplyForRoom implements Initializable {
         System.out.println(firstRoomPrefText.getValue());
         System.out.println(secondRoomPrefText.getValue());
         System.out.println(thirdRoomPrefText.getValue());
+
+        //TODO: Room Allotment algorithm...!!!
     }
 
     public void onBack() throws IOException {
