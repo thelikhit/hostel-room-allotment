@@ -1,51 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-      prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.likhitjain.WardenDetailsForStudent">
-    <MenuBar>
-        <Menu mnemonicParsing="false" text="File">
-            <MenuItem mnemonicParsing="false" onAction="#onBack" text="Back"/>
-            <SeparatorMenuItem mnemonicParsing="false"/>
-            <MenuItem mnemonicParsing="false" onAction="#onLogout" text="Logout"/>
-            <SeparatorMenuItem mnemonicParsing="false"/>
-            <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close"/>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Edit">
-            <MenuItem mnemonicParsing="false" text="Delete"/>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-            <MenuItem mnemonicParsing="false" text="About"/>
-        </Menu>
-    </MenuBar>
-    <AnchorPane prefHeight="367.0" prefWidth="600.0">
-        <Text layoutX="211.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Warden Details are "
-              textAlignment="CENTER">
-            <font>
-                <Font size="18.0"/>
-            </font>
-        </Text>
-        <Text fx:id="wardenNameText" layoutX="154.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              text="name" textAlignment="CENTER" wrappingWidth="305.0">
-            <font>
-                <Font size="16.0"/>
-            </font>
-        </Text>
-        <Text fx:id="wardenIDText" layoutX="154.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id"
-              textAlignment="CENTER" wrappingWidth="305.0">
-            <font>
-                <Font size="16.0"/>
-            </font>
-        </Text>
-        <Text fx:id="wardenContactText" layoutX="154.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              text="contact" textAlignment="CENTER" wrappingWidth="305.0">
-            <font>
-                <Font size="16.0"/>
-            </font>
-        </Text>
-    </AnchorPane>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.likhitjain.WardenDetailsForStudent">
+   <children>
+       <MenuBar>
+          <menus>
+              <Menu mnemonicParsing="false" text="File">
+                 <items>
+                     <MenuItem mnemonicParsing="false" onAction="#onBack" text="Back" />
+                     <SeparatorMenuItem mnemonicParsing="false" />
+                     <MenuItem mnemonicParsing="false" onAction="#onLogout" text="Logout" />
+                     <SeparatorMenuItem mnemonicParsing="false" />
+                     <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close" />
+                 </items>
+              </Menu>
+          </menus>
+       </MenuBar>
+       <AnchorPane prefHeight="367.0" prefWidth="600.0">
+          <children>
+              <Text layoutX="211.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Warden Details are " textAlignment="CENTER">
+                  <font>
+                      <Font size="18.0" />
+                  </font>
+              </Text>
+            <TableView fx:id="wardenDetailsTable" layoutX="160.0" layoutY="45.0" prefHeight="68.0" prefWidth="350.0">
+              <columns>
+                <TableColumn fx:id="wardenNameColumn" prefWidth="150.0" text="Name" />
+                <TableColumn fx:id="empIDColumn" prefWidth="100.0" text="EmpID" />
+                  <TableColumn fx:id="wardenContactColumn" prefWidth="100.0" text="Contact" />
+              </columns>
+            </TableView>
+          </children>
+       </AnchorPane>
+   </children>
 </VBox>

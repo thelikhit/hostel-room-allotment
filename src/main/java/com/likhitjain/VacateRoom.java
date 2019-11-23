@@ -43,7 +43,7 @@ public class VacateRoom {
         resultSet.next();
 
         if (resultSet.getString(1).equals(vacatedRoomConfirmPassword.getText())) {
-            AlertBox.infoBox("Are you sure you want to vacate your room? this cannot be undone", "Alert");
+            AlertBox.infoBox("Room Vacated.", "Alert");
 
             QUERY = "UPDATE Hostel.Student SET room = NULL WHERE usn = '" + studentUSN + "';";
             statement.executeUpdate(QUERY);

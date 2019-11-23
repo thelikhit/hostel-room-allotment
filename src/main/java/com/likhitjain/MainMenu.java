@@ -13,7 +13,7 @@ public class MainMenu {
     }
 
     public void onAdminButtonClick() throws IOException {
-        App.setRoot("availableRooms");
+        App.setRoot("wardenDetailsForStudent");
     }
 
     public void onClose() {

@@ -61,8 +61,6 @@ public class StudentHome {
     }
 
     public void onRoommateDetailsButtonClick() {
-
-
         try {
 
             String QUERY = "SELECT f_name, l_name, department, mobile_no FROM Hostel.Student WHERE room = " +
