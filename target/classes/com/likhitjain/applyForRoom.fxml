@@ -31,7 +31,7 @@
                 <TableColumn fx:id="roomFeesColumn" minWidth="8.0" prefWidth="100.0" style="-fx-alignment: CENTER;"
                              text="Fees per year"/>
                 <TableColumn fx:id="roomDescriptionColumn" prefWidth="134.0" style="-fx-alignment: CENTER;"
-                             text="Room Description"/>
+                             text="Room Description" visible="false"/>
             </columns>
         </TableView>
         <Text layoutX="230.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select preference:">

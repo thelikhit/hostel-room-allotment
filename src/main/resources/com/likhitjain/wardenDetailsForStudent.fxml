@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -21,20 +20,19 @@
           </menus>
        </MenuBar>
        <AnchorPane prefHeight="367.0" prefWidth="600.0">
-          <children>
-              <Text layoutX="211.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Warden Details are " textAlignment="CENTER">
-                  <font>
-                      <Font size="18.0" />
-                  </font>
-              </Text>
-            <TableView fx:id="wardenDetailsTable" layoutX="160.0" layoutY="45.0" prefHeight="68.0" prefWidth="350.0">
-              <columns>
-                <TableColumn fx:id="wardenNameColumn" prefWidth="150.0" text="Name" />
-                <TableColumn fx:id="empIDColumn" prefWidth="100.0" text="EmpID" />
-                  <TableColumn fx:id="wardenContactColumn" prefWidth="100.0" text="Contact" />
-              </columns>
-            </TableView>
-          </children>
+           <Text layoutX="211.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Warden Details are "
+                 textAlignment="CENTER">
+               <font>
+                   <Font size="18.0"/>
+               </font>
+           </Text>
+           <TableView fx:id="wardenDetailsTable" layoutX="160.0" layoutY="45.0" prefHeight="68.0" prefWidth="350.0">
+               <columns>
+                   <TableColumn fx:id="wardenNameColumn" prefWidth="150.0" text="Name"/>
+                   <TableColumn fx:id="empIDColumn" prefWidth="100.0" text="EmpID"/>
+                   <TableColumn fx:id="wardenContactColumn" prefWidth="100.0" text="Contact"/>
+               </columns>
+           </TableView>
        </AnchorPane>
    </children>
 </VBox>

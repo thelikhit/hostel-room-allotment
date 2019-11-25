@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.likhitjain.VacateRoom">
-   <children>
-       <MenuBar>
-           <menus>
-               <Menu mnemonicParsing="false" text="File">
-                   <items>
-                       <MenuItem mnemonicParsing="false" onAction="#onBack" text="Back" />
-                       <SeparatorMenuItem mnemonicParsing="false" />
-                       <MenuItem mnemonicParsing="false" onAction="#onLogout" text="Logout" />
-                       <SeparatorMenuItem mnemonicParsing="false" />
-                       <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close" />
-                   </items>
-               </Menu>
-           </menus>
-       </MenuBar>
-      <AnchorPane prefHeight="368.0" prefWidth="600.0">
-         <children>
-            <Text layoutX="146.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your password to confirm" textAlignment="CENTER" wrappingWidth="308.88671875" />
-            <Text  layoutX="251.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Button layoutX="268.0" layoutY="79.0" mnemonicParsing="false" onAction="#onVacateButtonClick" text="Vacate" />
-            <PasswordField fx:id="vacatedRoomConfirmPassword" layoutX="207.0" layoutY="38.0"  />
-         </children>
-      </AnchorPane>
-   </children>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.likhitjain.VacateRoom">
+    <MenuBar>
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" onAction="#onBack" text="Back"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" onAction="#onLogout" text="Logout"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close"/>
+        </Menu>
+    </MenuBar>
+    <AnchorPane prefHeight="368.0" prefWidth="600.0">
+        <Text layoutX="146.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Please enter your password to confirm" textAlignment="CENTER" wrappingWidth="308.88671875"/>
+        <Text layoutX="251.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
+        <Button layoutX="268.0" layoutY="99.0" mnemonicParsing="false" onAction="#onVacateButtonClick"
+                text="Vacate"/>
+        <PasswordField fx:id="vacatedRoomConfirmPassword" layoutX="207.0" layoutY="55.0" promptText="Password"/>
+        <Text layoutX="223.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This cannot be undone."
+              textAlignment="CENTER"/>
+    </AnchorPane>
 </VBox>

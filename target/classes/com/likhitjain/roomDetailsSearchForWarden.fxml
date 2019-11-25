@@ -1,49 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.likhitjain.RoomDetailsSearchForWarden">
-   <children>
-      <MenuBar>
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <AnchorPane prefHeight="369.0" prefWidth="600.0">
-         <children>
-            <TextField fx:id="roomIDText" layoutX="198.0" layoutY="44.0" promptText="Room ID" />
-            <Text layoutX="166.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the Room ID you want to search">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <TableView fx:id="roomDetailsTable" layoutY="136.0" prefHeight="71.0" prefWidth="600.0">
-              <columns>
-                <TableColumn fx:id="roomIDColumn" prefWidth="75.0" text="room ID" />
-                <TableColumn fx:id="blockNameColumn" prefWidth="75.0" text="Block" />
-                  <TableColumn fx:id="usnsColums" prefWidth="215.0" text="USNs" />
-                  <TableColumn fx:id="roomDescColumn" prefWidth="285.0" text="Room Description" />
-              </columns>
-            </TableView>
-            <Button fx:id="searchButton" layoutX="259.0" layoutY="83.0" mnemonicParsing="false" onAction="#onSearchButtonClick" text="Search" />
-         </children>
-      </AnchorPane>
-   </children>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.likhitjain.RoomDetailsSearchForWarden">
+    <MenuBar>
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" onAction="#onBack" text="Back"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" onAction="#onLogout" text="Logout"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" onAction="#onClose" text="Exit"/>
+        </Menu>
+    </MenuBar>
+    <AnchorPane prefHeight="369.0" prefWidth="600.0">
+        <TextField fx:id="roomIDText" layoutX="198.0" layoutY="44.0" promptText="Room ID"/>
+        <Text layoutX="166.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Enter the Room ID you want to search">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Text>
+        <TableView fx:id="roomDetailsTable" layoutY="136.0" prefHeight="71.0" prefWidth="600.0">
+            <columns>
+                <TableColumn fx:id="roomIDColumn" prefWidth="75.0" text="room ID"/>
+                <TableColumn fx:id="blockNameColumn" prefWidth="75.0" text="Block"/>
+                <TableColumn fx:id="usnsColums" prefWidth="215.0" text="USNs"/>
+                <TableColumn fx:id="roomDescColumn" prefWidth="285.0" text="Room Description"/>
+            </columns>
+        </TableView>
+        <Button fx:id="searchButton" layoutX="259.0" layoutY="83.0" mnemonicParsing="false"
+                onAction="#onSearchButtonClick" text="Search"/>
+    </AnchorPane>
 </VBox>

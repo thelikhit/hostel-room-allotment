@@ -24,7 +24,7 @@ public class AdminLogin {
 
     public void onLoginButtonClick() throws SQLException {
 
-        String usernameText = username.getText();
+        String usernameText = username.getText().toUpperCase();
         String passwordText = password.getText();
 
         Connection connection = ConnectionManager.getConnection();
@@ -44,10 +44,9 @@ public class AdminLogin {
                 password.setStyle("-fx-border-color: green ;");
                 System.out.println("Credentials OK. Login successful.");
 
-
             }
         }
-        catch (SQLException e) {
+        catch (Exception e) {
             System.out.println("Enter correct username and password");
             username.setStyle("-fx-border-color: red ;");
             password.setStyle("-fx-border-color: red ;");

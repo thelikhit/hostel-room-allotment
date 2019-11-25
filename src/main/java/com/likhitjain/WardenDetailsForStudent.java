@@ -10,27 +10,23 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class WardenDetailsForStudent implements Initializable {
 
-    static String empID;
-    static String wardenName;
-    static String wardenContact;
+    private static String empID;
+    private static String wardenName;
+    private static String wardenContact;
 
     @FXML
-    public TableView<WardenTable> wardenDetailsTable = new TableView<>();
+    public TableView<Warden> wardenDetailsTable = new TableView<>();
 
     @FXML
-    public TableColumn<WardenTable, String> wardenNameColumn = new TableColumn<>("Warden Name");
+    public TableColumn<Warden, String> wardenNameColumn = new TableColumn<>("Warden Name");
     @FXML
-    public TableColumn<WardenTable, String> empIDColumn = new TableColumn<>("Emp ID");
+    public TableColumn<Warden, String> empIDColumn = new TableColumn<>("Emp ID");
     @FXML
-    public TableColumn<WardenTable, String> wardenContactColumn  = new TableColumn<>("Contact");
+    public TableColumn<Warden, String> wardenContactColumn  = new TableColumn<>("Contact");
 
     static void setWardenDetails(String id, String name, String contact) {
         empID = id;
@@ -45,25 +41,20 @@ public class WardenDetailsForStudent implements Initializable {
         empIDColumn.setCellValueFactory(new PropertyValueFactory<>("empID"));
         wardenContactColumn.setCellValueFactory(new PropertyValueFactory<>("wardenContact"));
 
-        ObservableList<WardenTable> list = null;
-        try {
-            list = getWardenList();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        ObservableList<Warden> list;
+        list = getWardenList();
         wardenDetailsTable.setItems(list);
     }
 
-    private ObservableList<WardenTable> getWardenList() throws SQLException {
-
-        WardenTable warden = new WardenTable(wardenName, empID, wardenContact);
-
+    private ObservableList<Warden> getWardenList() {
+        Warden warden = new Warden(wardenName, empID, wardenContact);
         return FXCollections.observableArrayList(warden);
     }
 
     public void onBack() throws IOException {
         App.setRoot("studentHome");
     }
+
     public void onLogout() throws IOException {
         App.setRoot("mainMenu");
     }

@@ -1,58 +1,79 @@
 package com.likhitjain;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.text.Text;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class RoommateDetailsForStudent {
+public class RoommateDetailsForStudent implements Initializable {
 
-    private static String roommateName1, roommateName2;
+    private static String roommatefName1, roommatefName2;
+    private static String roommatelName1, roommatelName2;
     private static String roommateDept1, roommateDept2;
+    private static String roommateSem1, roommateSem2;
     private static String roommateContact1, roommateContact2;
 
     @FXML
-    public Text name1Text;
-    @FXML
-    public Text dept1Text;
-    @FXML
-    public Text contact1Text;
-    @FXML
-    public Text name2Text;
-    @FXML
-    public Text dept2Text;
-    @FXML
-    public Text contact2Text;
+    public TableView<Student> roommateDetailsTable = new TableView<>();
 
-    //if 1 roommate
-    static void setRoommateDetails(String name, String dept, String contact) {
-        roommateName1 = name;
+    @FXML
+    private TableColumn<Student, String> fNameColumn = new TableColumn<>();
+    @FXML
+    private TableColumn<Student, String> lNameColumn = new TableColumn<>();
+    @FXML
+    private TableColumn<Student, String> contactColumn = new TableColumn<>();
+    @FXML
+    private TableColumn<Student, String> deptColumn = new TableColumn<>();
+    @FXML
+    private TableColumn<Student, String> semColumn = new TableColumn<>();
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        fNameColumn.setCellValueFactory(new PropertyValueFactory<>("fName"));
+        lNameColumn.setCellValueFactory(new PropertyValueFactory<>("lName"));
+        contactColumn.setCellValueFactory(new PropertyValueFactory<>("guardianContact"));
+        deptColumn.setCellValueFactory(new PropertyValueFactory<>("department"));
+        semColumn.setCellValueFactory(new PropertyValueFactory<>("semester"));
+
+        ObservableList<Student> list = getRoommateDetailsList();
+        roommateDetailsTable.setItems(list);
+    }
+
+    private ObservableList<Student> getRoommateDetailsList() {
+        Student roommate1 = new Student(roommatefName1, roommatelName1, roommateContact1, roommateDept1, roommateSem1);
+        Student roommate2 = new Student(roommatefName2, roommatelName2, roommateContact2, roommateDept2, roommateSem2);
+
+        return FXCollections.observableArrayList(roommate1, roommate2);
+    }
+
+    static void setRoommateDetails(String fname, String lName, String dept, String sem, String contact) {
+        roommatefName1 = fname;
+        roommatelName1 = lName;
         roommateDept1 = dept;
+        roommateSem1 = sem;
         roommateContact1 = contact;
     }
 
-    //if 2 roommates
-    static void setRoommateDetails(String name1, String dept1, String contact1, String name2, String dept2, String contact2 ) {
-        roommateName1 = name1;
+    static void setRoommateDetails(String fname1, String lName1, String dept1, String sem1, String contact1,
+                                   String fname2, String lName2, String dept2, String sem2, String contact2 ) {
+        roommatefName1 = fname1;
+        roommatelName1 = lName1;
         roommateDept1 = dept1;
+        roommateSem1 = sem1;
         roommateContact1 = contact1;
-        roommateName2 = name2;
+
+        roommatefName2 = fname2;
+        roommatelName2 = lName2;
         roommateDept2 = dept2;
+        roommateSem2 = sem2;
         roommateContact2 = contact2;
-    }
-
-    public void initialize() {
-        if (roommateName1 != null) {
-            name1Text.setText(roommateName1);
-            dept1Text.setText(roommateDept1);
-            contact1Text.setText(roommateContact1);
-        }
-
-        if (roommateName2 != null) {
-            name2Text.setText(roommateName2);
-            dept2Text.setText(roommateDept2);
-            contact2Text.setText(roommateContact2);
-        }
     }
 
     public void onBack() throws IOException {

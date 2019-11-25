@@ -1,11 +1,13 @@
 package com.likhitjain;
 
-import javafx.beans.property.SimpleStringProperty;
-
-public class StudentTable {
+public class Student {
     private String usn;
     private String fName;
     private String lName;
+    private String passwd;
+    private String dob;
+    private double gpa;
+    private char gender;
     private String department;
     private String semester;
     private String guardianName;
@@ -14,7 +16,27 @@ public class StudentTable {
     private String contact;
     private String room;
 
-    public StudentTable(String usn, String fName, String lName, String department, String semester, String guardianName, String guardianContact, String permAddress, String contact, String room) {
+    public Student(String usn, String fName, String lName, String passwd, String dob, double gpa, char gender,
+                   String department, String semester, String guardianName, String guardianContact,
+                   String permAddress, String contact, String room) {
+        this.usn = usn;
+        this.fName = fName;
+        this.lName = lName;
+        this.passwd = passwd;
+        this.dob = dob;
+        this.gpa = gpa;
+        this.gender = gender;
+        this.department = department;
+        this.semester = semester;
+        this.guardianName = guardianName;
+        this.guardianContact = guardianContact;
+        this.permAddress = permAddress;
+        this.contact = contact;
+        this.room = room;
+    }
+
+    public Student(String usn, String fName, String lName, String department, String semester, String guardianName,
+                   String guardianContact, String permAddress, String contact, String room) {
         this.usn = usn;
         this.fName = fName;
         this.lName = lName;
@@ -25,6 +47,15 @@ public class StudentTable {
         this.permAddress = permAddress;
         this.contact = contact;
         this.room = room;
+    }
+
+    public Student(String fName, String lName, String contact, String department, String semester) {
+        this.fName = fName;
+        this.lName = lName;
+        this.department = department;
+        this.semester = semester;
+        this.contact = contact;
+
     }
 
     public String getUsn() {
@@ -105,5 +136,37 @@ public class StudentTable {
 
     public void setRoom(String room) {
         this.room = room;
+    }
+
+    public String getPasswd() {
+        return passwd;
+    }
+
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public double getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(double gpa) {
+        this.gpa = gpa;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
     }
 }

@@ -7,12 +7,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
-/*
-TODO: 1. Data validation of all inputs before sending to database.
-      2. Check if both passwords are equal.
-*/
 
 public class WardenSignup {
 
@@ -27,6 +22,8 @@ public class WardenSignup {
     @FXML
     public TextField nameText;
 
+    private Connection connection = ConnectionManager.getConnection();
+
     public void onBack() throws IOException {
         App.setRoot("wardenLogin");
     }
@@ -35,30 +32,55 @@ public class WardenSignup {
         System.exit(0);
     }
 
+    public void onRegisterButtonClick() {
 
-    public void onRegisterButtonClick() throws SQLException {
+        String empID;
+        String name;
+        String mobileNo;
+        String password;
 
-        String empID = empIDText.getText();
-        String name = nameText.getText();
-        String mobileNo = mobileNoText.getText();
-        String password = passwordText.getText();
+        if (!Validation.validateEID(empIDText.getText().toUpperCase())) {
+            AlertBox.infoBox("Enter correct format for Employee ID", "Incorrect format");
+            return;
+        }
 
-        Connection connection = ConnectionManager.getConnection() ;
+        if (!Validation.validateName(nameText.getText())) {
+            AlertBox.infoBox("Enter correct format for name", "Incorrect format");
+            return;
+        }
 
-        String QUERY = "INSERT INTO Hostel.Warden VALUES (?,?,?,?);";
+        if (!Validation.validateMobileNo(mobileNoText.getText())) {
+            AlertBox.infoBox("Enter correct format for mobile number", "Incorrect format");
+            return;
+        }
 
-        PreparedStatement preparedStatement = connection.prepareStatement(QUERY);
+        if (!passwordText.getText().equals(confirmPasswordText.getText())) {
+            AlertBox.infoBox("Passwords do not match", "Input Error");
+            return;
+        }
 
-        preparedStatement.setString(1, empID);
-        preparedStatement.setString(2, name);
-        preparedStatement.setString(3, mobileNo);
-        preparedStatement.setString(4, password);
+        name = nameText.getText();
+        empID = empIDText.getText().toUpperCase();
+        mobileNo = mobileNoText.getText();
+        password = passwordText.getText();
 
-        int rowsAffected = preparedStatement.executeUpdate();
-        System.out.println("Rows Affected: " +rowsAffected);
-        System.out.println("Data added successfully!");
+        try {
 
-        connection.close();
+            String QUERY = "INSERT INTO Hostel.Warden VALUES (?,?,?,?);";
+            PreparedStatement preparedStatement = connection.prepareStatement(QUERY);
 
+            preparedStatement.setString(1, empID);
+            preparedStatement.setString(2, name);
+            preparedStatement.setString(3, mobileNo);
+            preparedStatement.setString(4, password);
+            preparedStatement.execute();
+
+            AlertBox.infoBox("Sign-up successful.", "Success");
+            App.setRoot("wardenLogin");
+            connection.close();
+        } catch (Exception e) {
+            AlertBox.infoBox("Sign-up failed", "Failure");
+            e.printStackTrace();
+        }
     }
 }

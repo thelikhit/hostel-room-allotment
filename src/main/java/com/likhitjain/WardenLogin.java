@@ -8,7 +8,6 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 public class WardenLogin {
@@ -32,40 +31,36 @@ public class WardenLogin {
         App.setRoot("WardenSignup");
     }
 
-    public void onLoginButtonClick() throws SQLException {
-
-        String empID = empIDText.getText();
-        String password = passwordText.getText();
-
-        Connection connection = ConnectionManager.getConnection();
-        Statement statement = connection.createStatement();
-
-        String QUERY = "SELECT * FROM Hostel.Warden WHERE emp_id='" + empID + "';";
-
-        ResultSet resultSet = statement.executeQuery(QUERY);
-        resultSet.next();
-
+    public void onLoginButtonClick() {
         try {
+            String empID = empIDText.getText().toUpperCase();
+            String password = passwordText.getText();
+
+            Connection connection = ConnectionManager.getConnection();
+            Statement statement = connection.createStatement();
+
+            String QUERY = "SELECT * FROM Hostel.Warden WHERE emp_id='" + empID + "';";
+
+            ResultSet resultSet = statement.executeQuery(QUERY);
+            resultSet.next();
             if ((!empID.equals(resultSet.getString("emp_id")) || (!password.equals(resultSet.getString("passwd"))))) {
-                System.out.println("Enter correct username and password");
+                AlertBox.infoBox("Enter valid credentials", "Login Error");
                 empIDText.setStyle("-fx-border-color: red ;");
                 passwordText.setStyle("-fx-border-color: red ;");
-        }
-            else {
+            } else {
                 empIDText.setStyle("-fx-border-color: green ;");
                 passwordText.setStyle("-fx-border-color: green ;");
-                System.out.println("Login successful.");
                 WardenHome.setWardenHelloMessage(resultSet.getString("w_name"), resultSet.getString("emp_id"));
                 App.setRoot("wardenHome");
             }
-        }
-        catch (SQLException | IOException e) {
-            System.out.println("Enter correct username and password");
+
+            statement.close();
+            connection.close();
+        } catch (Exception e) {
+            AlertBox.infoBox("Enter valid credentials", "Login Error");
+            e.printStackTrace();
             empIDText.setStyle("-fx-border-color: red ;");
             passwordText.setStyle("-fx-border-color: red ;");
         }
-
-        statement.close();
-        connection.close();
     }
 }

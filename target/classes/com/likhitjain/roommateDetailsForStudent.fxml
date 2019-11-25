@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -17,18 +16,14 @@
         </Menu>
     </MenuBar>
     <AnchorPane prefHeight="370.0" prefWidth="600.0">
-        <Text layoutX="235.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Roommate Details: "/>
-        <Text fx:id="name1Text" layoutX="200.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              textAlignment="CENTER" wrappingWidth="200.0"/>
-        <Text fx:id="dept1Text" layoutX="200.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              textAlignment="CENTER" wrappingWidth="200.0"/>
-        <Text fx:id="contact1Text" layoutX="200.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              textAlignment="CENTER" wrappingWidth="200.0"/>
-        <Text fx:id="name2Text" layoutX="199.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              textAlignment="CENTER" wrappingWidth="200.0"/>
-        <Text fx:id="dept2Text" layoutX="199.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              textAlignment="CENTER" wrappingWidth="200.0"/>
-        <Text fx:id="contact2Text" layoutX="200.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              textAlignment="CENTER" wrappingWidth="200.0"/>
+        <TableView fx:id="roommateDetailsTable" layoutX="75.0" layoutY="21.0" prefHeight="200.0" prefWidth="450.0">
+            <columns>
+                <TableColumn fx:id="fNameColumn" prefWidth="100.0" text="First Name"/>
+                <TableColumn fx:id="lNameColumn" prefWidth="100.0" text="Last Name"/>
+                <TableColumn fx:id="contactColumn" prefWidth="100.0" text="Contact"/>
+                <TableColumn fx:id="deptColumn" prefWidth="75.0" text="Dept"/>
+                <TableColumn fx:id="semColumn" prefWidth="75.0" text="Semester"/>
+            </columns>
+        </TableView>
     </AnchorPane>
 </VBox>

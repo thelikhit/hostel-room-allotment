@@ -9,6 +9,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -36,47 +37,42 @@ public class StudentDetailsSearchForWarden implements Initializable {
     private Statement statement = connection.createStatement();
 
     @FXML
-    private TableView<StudentTable> studentDetailsTable = new TableView<>();
+    private TableView<Student> studentDetailsTable = new TableView<>();
     @FXML
-    private TableColumn<StudentTable, String> usnColumn = new TableColumn<>("USN");
+    private TableColumn<Student, String> usnColumn = new TableColumn<>("USN");
     @FXML
-    private TableColumn<StudentTable, String> fNameColumn = new TableColumn<>("First Name");;
+    private TableColumn<Student, String> fNameColumn = new TableColumn<>("First Name");
     @FXML
-    private TableColumn<StudentTable, String> lNameColumn= new TableColumn<>("Last Name");;
+    private TableColumn<Student, String> lNameColumn= new TableColumn<>("Last Name");
     @FXML
-    private TableColumn<StudentTable, String> roomColumn = new TableColumn<>("Room");;
+    private TableColumn<Student, String> roomColumn = new TableColumn<>("Room");
     @FXML
-    private TableColumn<StudentTable, String> contactColumn = new TableColumn<>("Contact");;
+    private TableColumn<Student, String> contactColumn = new TableColumn<>("Contact");
     @FXML
-    private TableColumn<StudentTable, String> deptColumn = new TableColumn<>("Department");;
+    private TableColumn<Student, String> deptColumn = new TableColumn<>("Department");
     @FXML
-    private TableColumn<StudentTable, String> semColumn = new TableColumn<>("Semester");;
+    private TableColumn<Student, String> semColumn = new TableColumn<>("Semester");
     @FXML
-    private TableColumn<StudentTable, String> gNameColumn = new TableColumn<>("Guardian Name");;
+    private TableColumn<Student, String> gNameColumn = new TableColumn<>("Guardian Name");
     @FXML
-    private TableColumn<StudentTable, String> gContactColumn = new TableColumn<>("Guardian Contact");;
+    private TableColumn<Student, String> gContactColumn = new TableColumn<>("Guardian Contact");
     @FXML
-    private TableColumn<StudentTable, String> permAddColumn = new TableColumn<>("Permanent Address");
+    private TableColumn<Student, String> permAddColumn = new TableColumn<>("Permanent Address");
 
     public StudentDetailsSearchForWarden() throws SQLException {}
 
-
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-    }
+    public void initialize(URL location, ResourceBundle resources) {}
 
-    private ObservableList<StudentTable> getStudentList() {
-         StudentTable student = new StudentTable(studentUSN, fName, lName, dept, semester, guardianName, guardianContact, permAddress, contact, room);
+    private ObservableList<Student> getStudentList() {
+         Student student = new Student(studentUSN, fName, lName, dept, semester, guardianName, guardianContact, permAddress, contact, room);
         return FXCollections.observableArrayList(student);
     }
 
     public void onSearchButtonClick() {
 
-
         try {
-
-            String QUERY = "SELECT * FROM Hostel.Student WHERE usn='" + studentUSNText.getText() + "';";
-            System.out.println(QUERY);
+            String QUERY = "SELECT * FROM Hostel.Student WHERE usn='" + studentUSNText.getText().toUpperCase() + "';";
 
             ResultSet resultSet = statement.executeQuery(QUERY);
             resultSet.next();
@@ -103,14 +99,27 @@ public class StudentDetailsSearchForWarden implements Initializable {
             gContactColumn.setCellValueFactory(new PropertyValueFactory<>("guardianContact"));
             permAddColumn.setCellValueFactory(new PropertyValueFactory<>("permAddress"));
 
-            ObservableList<StudentTable> list = getStudentList();
+            ObservableList<Student> list = getStudentList();
             studentDetailsTable.setItems(list);
         }
         catch (SQLException e) {
-            AlertBox.infoBox("Please enter a valid USN", "Alert");
+            AlertBox.infoBox("No student found. Please enter a valid USN", "Not found");
         }
         catch (Exception e) {
+            AlertBox.infoBox("No student found. Please enter a valid USN", "Not found");
             e.printStackTrace();
         }
+    }
+
+    public void onBack() throws IOException {
+        App.setRoot("wardenHome");
+    }
+
+    public void onLogout() throws IOException {
+        App.setRoot("mainMenu");
+    }
+
+    public void onClose() {
+        System.exit(0);
     }
 }

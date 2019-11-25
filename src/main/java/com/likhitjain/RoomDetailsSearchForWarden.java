@@ -10,6 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -27,21 +28,20 @@ public class RoomDetailsSearchForWarden implements Initializable {
     @FXML
     public TextField roomIDText;
     @FXML
-    private TableView<RoomTable> roomDetailsTable = new TableView<>();
+    private TableView<Room> roomDetailsTable = new TableView<>();
     @FXML
-    public TableColumn<RoomTable, String> roomIDColumn = new TableColumn<>("Room ID");
+    public TableColumn<Room, String> roomIDColumn = new TableColumn<>("Room ID");
     @FXML
-    public TableColumn<RoomTable, String> blockNameColumn = new TableColumn<>("Block Name");
+    public TableColumn<Room, String> blockNameColumn = new TableColumn<>("Block Name");
     @FXML
-    public TableColumn<RoomTable, String> roomDescColumn = new TableColumn<>("Room Description");
+    public TableColumn<Room, String> roomDescColumn = new TableColumn<>("Room Description");
     @FXML
-    public TableColumn<RoomTable, String> usnsColums = new TableColumn<>("USNs");
+    public TableColumn<Room, String> usnsColums = new TableColumn<>("USNs");
     @FXML
     public Button searchButton;
 
 
-    public RoomDetailsSearchForWarden() throws SQLException {
-    }
+    public RoomDetailsSearchForWarden() throws SQLException {}
 
     private Connection connection = ConnectionManager.getConnection();
     private Statement statement = connection.createStatement();
@@ -49,15 +49,14 @@ public class RoomDetailsSearchForWarden implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {}
 
-    private ObservableList<RoomTable> getRoomDetailsList() {
-        RoomTable room = new RoomTable(roomID, blockName, roomDesc, usns);
+    private ObservableList<Room> getRoomDetailsList() {
+        Room room = new Room(roomID, blockName, roomDesc, usns);
         return FXCollections.observableArrayList(room);
     }
 
     public void onSearchButtonClick() {
         try {
-            String QUERY = "SELECT * FROM Hostel.Room WHERE r_id='" + roomIDText.getText() + "';";
-            System.out.println(QUERY);
+            String QUERY = "SELECT * FROM Hostel.Room WHERE r_id='" + roomIDText.getText().toUpperCase() + "';";
 
             ResultSet resultSet = statement.executeQuery(QUERY);
             resultSet.next();
@@ -91,16 +90,23 @@ public class RoomDetailsSearchForWarden implements Initializable {
             roomDescColumn.setCellValueFactory(new PropertyValueFactory<>("roomDesc"));
             usnsColums.setCellValueFactory(new PropertyValueFactory<>("usns"));
 
-            ObservableList<RoomTable> list = getRoomDetailsList();
+            ObservableList<Room> list = getRoomDetailsList();
             roomDetailsTable.setItems(list);
-
-        }
-        catch (SQLException e) {
+        } catch (Exception e) {
             AlertBox.infoBox("Please enter a valid Room ID", "Alert");
             e.printStackTrace();
         }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
+    }
+
+    public void onBack() throws IOException {
+        App.setRoot("wardenHome");
+    }
+
+    public void onLogout() throws IOException {
+        App.setRoot("mainMenu");
+    }
+
+    public void onClose() {
+        System.exit(0);
     }
 }

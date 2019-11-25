@@ -7,7 +7,7 @@ public class RoomType {
     private int fees;
     private String roomDesc;
 
-    public RoomType(String rTypeID, String occupancy, String attachedBathroom, int fees, String roomDesc) {
+    RoomType(String rTypeID, String occupancy, String attachedBathroom, int fees, String roomDesc) {
         this.rTypeID = rTypeID;
         this.occupancy = occupancy;
         this.attachedBathroom = attachedBathroom;

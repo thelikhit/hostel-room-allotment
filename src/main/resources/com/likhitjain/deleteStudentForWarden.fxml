@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.likhitjain.DeleteStudentForWarden">
+   <children>
+       <MenuBar>
+          <menus>
+              <Menu mnemonicParsing="false" text="File">
+                 <items>
+                     <MenuItem mnemonicParsing="false" onAction="#onBack" text="Logout" />
+                     <SeparatorMenuItem mnemonicParsing="false" />
+                     <MenuItem mnemonicParsing="false" onAction="#onLogout" text="Logout" />
+                     <SeparatorMenuItem mnemonicParsing="false" />
+                     <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close" />
+                 </items>
+              </Menu>
+          </menus>
+       </MenuBar>
+       <AnchorPane prefHeight="368.0" prefWidth="600.0">
+          <children>
+              <TextField fx:id="studentUSNText" layoutX="207.0" layoutY="55.0" promptText="USN" />
+              <Text  layoutX="151.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter USN of student you want to delete" textAlignment="CENTER" wrappingWidth="300.0" />
+              <Button fx:id="deleteButton" layoutX="269.0" layoutY="92.0" mnemonicParsing="false" onAction="#onDeleteStudentButtonClick" text="Delete" />
+            <Text layoutX="225.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This cannot be undone" />
+          </children>
+       </AnchorPane>
+   </children>
+</VBox>

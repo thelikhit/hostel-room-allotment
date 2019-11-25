@@ -6,72 +6,72 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.likhitjain.StudentSignup">
-   <children>
-       <MenuBar>
-          <menus>
-              <Menu mnemonicParsing="false" text="File">
-                 <items>
-                     <MenuItem mnemonicParsing="false" onAction="#onBack" text="Back" />
-                     <SeparatorMenuItem mnemonicParsing="false" />
-                     <MenuItem mnemonicParsing="false" onAction="#onClose" text="Exit" />
-                 </items>
-              </Menu>
-          </menus>
-       </MenuBar>
-       <ScrollPane prefHeight="530.0" prefWidth="600.0">
-          <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="600.0">
-                 <children>
-                     <TextField fx:id="usn" layoutX="214.0" layoutY="64.0" promptText="USN" />
-                     <TextField fx:id="fName" layoutX="214.0" layoutY="95.0" promptText="First Name" />
-                     <TextField fx:id="lName" layoutX="214.0" layoutY="126.0" promptText="Last Name" />
-                     <Text layoutX="221.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Registration Page" />
-                     <Text fill="#f80606" layoutX="214.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note: All fields are mandatory">
-                         <font>
-                             <Font size="10.0" />
-                         </font>
-                     </Text>
-                     <RadioButton fx:id="male" layoutX="214.0" layoutY="219.0" mnemonicParsing="false" text="Male">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="gender" />
-                     </toggleGroup>
-                  </RadioButton>
-                     <RadioButton fx:id="female" layoutX="274.0" layoutY="219.0" mnemonicParsing="false" text="Female" toggleGroup="$gender" />
-                     <DatePicker fx:id="dob" layoutX="214.0" layoutY="240.0" prefHeight="31.0" prefWidth="187.0" promptText="DOB" />
-                     <TextField fx:id="gpa" layoutX="214.0" layoutY="271.0" promptText="Current GPA" />
-                     <TextField fx:id="mobileNo" layoutX="214.0" layoutY="302.0" promptText="Mobile Number" />
-                     <TextField fx:id="guardianName" layoutX="214.0" layoutY="333.0" promptText="Guardian Name" />
-                     <TextField fx:id="guardianMobileNo" layoutX="214.0" layoutY="364.0" promptText="Guardian Mobile Number" />
-                     <TextField fx:id="guardianAddress" layoutX="214.0" layoutY="395.0" promptText="Guardian Address" />
-                     <PasswordField fx:id="password" layoutX="214.0" layoutY="426.0" promptText="Password" />
-                     <PasswordField fx:id="confirmPassword" layoutX="214.0" layoutY="457.0" promptText="Confirm Password" />
-                     <Button fx:id="register" layoutX="214.0" layoutY="499.0" mnemonicParsing="false" text="Register" onAction="#onRegisterButtonClick"/>
-                     <ComboBox fx:id="department" layoutX="213.0" layoutY="157.0" prefWidth="150.0" promptText="Department">
-                         <items>
-                             <FXCollections fx:factory="observableArrayList">
-                             <String fx:value="ISE" />
-                             <String fx:value="CSE" />
-                             </FXCollections>
-                         </items>
-                     </ComboBox>
-                     <ComboBox fx:id="semester" layoutX="213.0" layoutY="188.0" prefWidth="150.0" promptText="Semester">
-                         <items>
-                             <FXCollections fx:factory="observableArrayList">
-                                 <String fx:value="1" />
-                                 <String fx:value="2" />
-                                 <String fx:value="3" />
-                                 <String fx:value="4" />
-                                 <String fx:value="5" />
-                                 <String fx:value="6" />
-                                 <String fx:value="7" />
-                                 <String fx:value="8" />
-                             </FXCollections>
-                         </items>
-                     </ComboBox>
-                 </children>
-              </AnchorPane>
-          </content>
-       </ScrollPane>
-   </children>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.likhitjain.StudentSignup">
+    <MenuBar>
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" onAction="#onBack" text="Back"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" onAction="#onClose" text="Exit"/>
+        </Menu>
+    </MenuBar>
+    <ScrollPane prefHeight="530.0" prefWidth="600.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="600.0">
+            <TextField fx:id="usn" layoutX="214.0" layoutY="64.0" promptText="USN"/>
+            <TextField fx:id="fName" layoutX="214.0" layoutY="95.0" promptText="First Name"/>
+            <TextField fx:id="lName" layoutX="214.0" layoutY="126.0" promptText="Last Name"/>
+            <Text layoutX="221.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                  text="Student Registration Page"/>
+            <Text fill="#f80606" layoutX="214.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                  text="Note: All fields are mandatory">
+                <font>
+                    <Font size="10.0"/>
+                </font>
+            </Text>
+            <RadioButton fx:id="male" layoutX="214.0" layoutY="219.0" mnemonicParsing="false" text="Male">
+                <toggleGroup>
+                    <ToggleGroup fx:id="gender"/>
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="female" layoutX="274.0" layoutY="219.0" mnemonicParsing="false" text="Female"
+                         toggleGroup="$gender"/>
+            <DatePicker fx:id="dob" layoutX="214.0" layoutY="240.0" prefHeight="31.0" prefWidth="187.0"
+                        promptText="DOB"/>
+            <TextField fx:id="gpa" layoutX="214.0" layoutY="271.0" promptText="Current GPA"/>
+            <TextField fx:id="mobileNo" layoutX="214.0" layoutY="302.0" promptText="Mobile Number"/>
+            <TextField fx:id="guardianName" layoutX="214.0" layoutY="333.0" promptText="Guardian Name"/>
+            <TextField fx:id="guardianMobileNo" layoutX="214.0" layoutY="364.0"
+                       promptText="Guardian Mobile Number"/>
+            <TextField fx:id="guardianAddress" layoutX="214.0" layoutY="395.0" promptText="Guardian Address"/>
+            <PasswordField fx:id="password" layoutX="214.0" layoutY="426.0" promptText="Password"/>
+            <PasswordField fx:id="confirmPassword" layoutX="214.0" layoutY="457.0"
+                           promptText="Confirm Password"/>
+            <Button fx:id="register" layoutX="214.0" layoutY="499.0" mnemonicParsing="false" text="Register"
+                    onAction="#onRegisterButtonClick"/>
+            <ComboBox fx:id="department" layoutX="213.0" layoutY="157.0" prefWidth="150.0"
+                      promptText="Department">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="ISE"/>
+                        <String fx:value="CSE"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <ComboBox fx:id="semester" layoutX="213.0" layoutY="188.0" prefWidth="150.0" promptText="Semester">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="1"/>
+                        <String fx:value="2"/>
+                        <String fx:value="3"/>
+                        <String fx:value="4"/>
+                        <String fx:value="5"/>
+                        <String fx:value="6"/>
+                        <String fx:value="7"/>
+                        <String fx:value="8"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </AnchorPane>
+    </ScrollPane>
 </VBox>

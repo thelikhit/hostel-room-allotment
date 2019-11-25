@@ -11,9 +11,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
-
-// TODO: Allocation algorithm
 
 public class ApplyForRoom implements Initializable {
 
@@ -23,6 +28,8 @@ public class ApplyForRoom implements Initializable {
     public ComboBox secondRoomPrefText;
     @FXML
     public ComboBox thirdRoomPrefText;
+
+    private static String gender, studentUSN;
 
     @FXML
     private TableView<RoomType> roomTypeTable = new TableView<>();
@@ -37,6 +44,21 @@ public class ApplyForRoom implements Initializable {
     @FXML
     private TableColumn<RoomType, String> roomDescriptionColumn = new TableColumn<>("Room Description");
 
+    private Connection connection = ConnectionManager.getConnection();
+    private Statement statement = connection.createStatement();
+
+    public ApplyForRoom() throws SQLException {}
+
+    static void setGender(String g) {
+        if (g.equals("M"))
+            gender = "Boys";
+        else
+            gender = "Girls";
+    }
+
+    static void setStudentUSN(String usn) {
+        studentUSN = usn;
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -63,11 +85,60 @@ public class ApplyForRoom implements Initializable {
     }
 
     public void onApplyButtonClick() {
-        System.out.println(firstRoomPrefText.getValue());
-        System.out.println(secondRoomPrefText.getValue());
-        System.out.println(thirdRoomPrefText.getValue());
+        List<String> roomTypePrefs = new ArrayList<>();
+        roomTypePrefs.add(firstRoomPrefText.getValue().toString());
+        roomTypePrefs.add(secondRoomPrefText.getValue().toString());
+        roomTypePrefs.add(thirdRoomPrefText.getValue().toString());
+        System.out.println("Preferences: ");
+        System.out.println(Arrays.toString(roomTypePrefs.toArray()));
 
-        //TODO: Room Allotment algorithm...!!!
+        try {
+            for (String roomTypePref : roomTypePrefs) {
+                String QUERY = "SELECT r_id FROM Hostel.Room as R JOIN Hostel.RoomType AS RT JOIN Hostel.Block AS B WHERE R.r_type_id = RT.r_type_id AND R.b_id = B.b_id AND b_type='" + gender + "' AND RT.r_type_id='" + roomTypePref + "';";
+
+                ResultSet resultSet = statement.executeQuery(QUERY);
+
+                List<String> roomOptions = new ArrayList<>();
+
+                while (resultSet.next()) {
+                    roomOptions.add(resultSet.getString(1));
+                }
+                System.out.println(Arrays.toString(roomOptions.toArray()));
+
+                for (String roomOption : roomOptions) {
+
+                    System.out.println("Room Option: " + roomOption + " and RoomType Option: " + roomTypePref);
+
+                    String QUERY_MAX_OCCUPANCY = "SELECT occupancy FROM Hostel.RoomType AS RT JOIN Hostel.Room AS R WHERE RT.r_type_id = R.r_type_id AND R.r_id = '" + roomOption + "';";
+                    ResultSet resultSetOccupancy = statement.executeQuery(QUERY_MAX_OCCUPANCY);
+                    resultSetOccupancy.next();
+                    int maxOccupancy = resultSetOccupancy.getInt(1);
+                    System.out.println("Max. occupancy: " + maxOccupancy);
+
+                    String QUERY_CURR_OCCUPANCY = "SELECT COUNT(*) FROM Hostel.Room AS R JOIN Hostel.Student AS S WHERE " +
+                            "R.r_id = S.room AND room='" + roomOption + "';";
+                    ResultSet resultSetCurrOccupancy = statement.executeQuery(QUERY_CURR_OCCUPANCY);
+                    resultSetCurrOccupancy.next();
+                    int currOccupancy = resultSetCurrOccupancy.getInt(1);
+                    System.out.println("Current occupancy: " + currOccupancy);
+
+                    if (currOccupancy < maxOccupancy) {
+                        String QUERY_ALLOT = "UPDATE Hostel.Student SET room = '" + roomOption + "' WHERE usn='" + studentUSN + "';";
+                        statement.executeUpdate(QUERY_ALLOT);
+                        AlertBox.infoBox("Room " + roomOption + " allotted of type " + roomTypePref, "Success");
+                        App.setRoot("studentHome");
+                        return;
+                    }
+                    else
+                        System.out.println("Max occupancy reached\n");
+                }
+            }
+            AlertBox.infoBox("Preferred room not available", "");
+        }
+        catch (Exception e) {
+            AlertBox.infoBox("Room could not be allotted.", "Allotment error");
+            e.printStackTrace();
+        }
     }
 
     public void onBack() throws IOException {
@@ -76,7 +147,6 @@ public class ApplyForRoom implements Initializable {
 
     public void onLogout() throws IOException {
         App.setRoot("mainMenu");
-
     }
 
     public void onClose() {

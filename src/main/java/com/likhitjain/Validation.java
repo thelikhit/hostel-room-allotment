@@ -1,27 +1,26 @@
 package com.likhitjain;
 
-// TODO: Data validation, with regular expression.
+import java.util.regex.*;
+
 class Validation {
 
-    public boolean validateEmployeeID(String empID) {
-        return false;
+    public static  boolean validateEID(String empID) {
+        return Pattern.matches("EID\\d{7}", empID);
     }
 
-    public boolean validateName(String name) {
-        return false;
+    public static boolean validateName(String name) {
+        return Pattern.matches("^[A-Za-z\\s]{1,}[.]?[A-Za-z\\s]{0,}$", name);
     }
 
-    public boolean validateMobileNo(String number) {
-        // number is taken as string, validated to see if all 10 digits are numbers
-        return false;
+    public static boolean validateMobileNo(String number) {
+        return Pattern.matches("^[6-9]\\d{9}$", number);
     }
 
-    public boolean validateUSN(String usn) {
-        //first 3 characters should be 1BM
-        return false;
+    public static boolean validateUSN(String usn) {
+        return Pattern.matches("1BM\\d{2}\\D{2}\\d{3}", usn);
     }
 
-    public boolean validateGPA(String gpa) {
-        return false;
+    public static boolean validateGPA(String gpa) {
+        return Pattern.matches("^(?:0|[1-9][0-9]*)\\.[0-9]+$", gpa);
     }
 }

@@ -16,8 +16,7 @@ public class VacateRoom {
     private Connection connection = ConnectionManager.getConnection();
     private Statement statement = connection.createStatement();
 
-    public VacateRoom() throws SQLException {
-    }
+    public VacateRoom() throws SQLException {}
 
     public void onBack() throws IOException {
         App.setRoot("studentHome");
@@ -43,14 +42,14 @@ public class VacateRoom {
         resultSet.next();
 
         if (resultSet.getString(1).equals(vacatedRoomConfirmPassword.getText())) {
-            AlertBox.infoBox("Room Vacated.", "Alert");
-
             QUERY = "UPDATE Hostel.Student SET room = NULL WHERE usn = '" + studentUSN + "';";
+            AlertBox.infoBox("Room Vacated.", "Success");
             statement.executeUpdate(QUERY);
             App.setRoot("studentHome");
         }
         else {
             vacatedRoomConfirmPassword.setStyle("-fx-border-color: red ;");
+            AlertBox.infoBox("Enter correct password to vacate room.", "Incorrect password");
         }
     }
 }

@@ -1,14 +1,14 @@
 package com.likhitjain;
 
-public class RoomTable {
+public class Room {
 
-    String roomID;
-    String blockName;
-    String roomDesc;
-    String usns;
+    private String roomID;
+    private String blockName;
+    private String roomDesc;
+    private String usns;
 
 
-    public RoomTable(String roomID, String blockName, String roomDesc, String usns) {
+    public Room(String roomID, String blockName, String roomDesc, String usns) {
         this.roomID = roomID;
         this.blockName = blockName;
         this.roomDesc = roomDesc;
@@ -31,7 +31,6 @@ public class RoomTable {
     public void setBlockName(String blockName) {
         this.blockName = blockName;
     }
-
 
     public String getRoomDesc() {
         return roomDesc;
