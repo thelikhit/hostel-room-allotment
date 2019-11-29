@@ -1,0 +1,30 @@
+usn,f_name,l_name,passwd,dob,department,semester,gpa,gender,guardian_name,guardian_contact,perm_address,warden,room,mobile_no
+1BM16CS001,Qabool,Mangal,qabool,1999-01-11,CSE,7,8.24,M,"Fatima Prashad",9855265248,"13, Binod Chowk, Dehra Dun - 550138",NULL,B302,9834686318
+1BM16CS003,Kamlesh,Swamy,kamlesh,1999-01-29,CSE,7,7.77,M,"Mayawati Mishra",7218951681,"94, Manjari Apartments, UrvashiGarh Bhubhaneshwar - 461796",NULL,B301,9651799831
+1BM16CS004,Rahim,Sha,rahim,1999-03-08,CSE,7,8.09,M,"Runjhun Bhatia",8963645288,"77, Gauransh Nagar, Jamnagar - 194714",NULL,B301,9015698513
+1BM16CS005,Ragini,Wali,ragini,1999-04-23,CSE,5,8.05,F,"Ekbal Kadakia",8299114845,"11, Rehman Heights, Harmada Pune - 150226",NULL,A102,8839511232
+1BM16IS001,Gayatri,Walla,gayatri,1999-05-28,ISE,7,8.51,F,"Nilima Kothari",8223097714,"68, IshatGunj, Vadodara - 279565",NULL,A303,6564732618
+1BM16IS002,Venkat,Krish,gayatri,1999-07-06,ISE,7,8.94,M,"Brock Radhakrishnan",7700247662,"97, Aarti Villas, Sodala Mysore - 127406",NULL,B303,7826561267
+1BM16IS003,Aarti,Basu,aarti,1999-11-06,ISE,7,8.31,F,"Anil Balasubramanian",7643158882,"91, Bandra, New Delhi - 32601",NULL,A302,6808524705
+1BM16IS004,Yash,Kadakia,yash,1999-12-02,ISE,7,8.40,M,"Kalyani Sarkar",7045249732,"88, Nilima Nagar, Jaipur - 584510",NULL,B302,8867725512
+1BM16IS005,Ganesh,Mahajan,ganesh,1999-06-26,ISE,7,7.76,M,"Nutan Grewal",9928603510,"10, Preet Society, AmirGunj Dehra Dun - 561623",NULL,B301,7278112252
+1BM17CS001,Alka,Gour,alka,1998-04-23,CSE,5,8.20,F,"Meghana Varty",9363463783,"15a/56, Wea, Ajmal Khan Road, Karol Bagh",NULL,A201,9824188659
+1BM17CS002,Giaan,Kale,giaan,1998-06-11,CSE,5,8.24,M,"Aayushi Kari",9035135300,"G/11, Sakar Complex, Nr Sardar Patel Wadi,raopura",NULL,B103,9154159377
+1BM17CS003,Chitra,Din,chitra,1998-12-01,CSE,5,7.89,F,"Rahim Jhaveri",9845618474,"7, Malinee Apartments, Mahakali Caves Road, Chakala(midc), Andheri (west)",NULL,A201,8404061057
+1BM17CS004,Uma,Swamy,uma,1998-09-14,CSE,5,7.11,F,"Bhanupriya Maharaj",8631730462,"117/119, Old Hanuman Lane, Kalbadevi",NULL,A201,7750897572
+1BM17CS005,Nagma,Kulkarni,nagma,1998-01-21,CSE,5,9.21,F,"Nishita Toor",9810862845,"38,2nd Floor, Josier Street, Nungambakkam",NULL,A203,8145127387
+1BM17IS001,Veena,Rout,veena,1998-06-11,ISE,5,8.73,F,"Nishita Toor",7254176452,"607, Karan Center, Opp Minerva Cplx, S D Road",NULL,A102,9392471928
+1BM17IS002,Aashish,Agarwal,aashish,1998-02-20,ISE,5,8.10,M,"Bijoy Kant",9875642109,"702 Hemkoot, Opp Capital Comm Centre, Ashram Road",NULL,B203,7392471928
+1BM17IS003,Qabeel,Gokhale,qabeel,1998-11-18,ISE,5,7.54,M,"Urmila Desai",8451745287,"Apeksha Apartment, 401-404, Opp Indian Oil Depot, Section 11",NULL,B102,9834518645
+1BM17IS004,Kiran,Sastry,kiran,1998-05-31,ISE,5,7.98,M,"Kalyan Yadav",9417630134,"Near Jain Temple, Osian",NULL,B102,7428451056
+1BM17IS005,Nupoor,Chauhan,nupoor,1998-05-30,ISE,5,9.81,F,"Aisha Sen",8710010244,"70a, Coromandel Town, Sidco Industrial Estate, Ambattur",NULL,A103,8521745204
+1BM18CS001,Ajay,Parekh,ajay,1999-01-20,CSE,3,6.60,M,"Mowgli Bhatia",8123623348,"41, Mustafa Apartments, NiyatiPur Hyderabad - 110737",NULL,B201,7994264746
+1BM18CS002,Charandeep,Varty,chandra,1999-02-24,CSE,3,7.30,M,"Ram Nath",8829406862,"30, Kharadi, Faridabad - 243677",NULL,B201,6500317629
+1BM18CS003,Eddie,Vohra,eddie,1999-04-13,CSE,3,8.34,M,"Dinesh Madan",8614579587,"65, Amir Apartments, FerozGarh Guwahati - 335561",NULL,B202,7676642986
+1BM18CS004,Narayan,Thomas,narayan,1999-09-06,CSE,3,7.17,M,"Shanti Randhawa",9142916735,"50, Mukti Heights, Churchgate Kanpur - 535918",NULL,B201,9071433431
+1BM18CS005,Komal,Kanda,komal,1999-04-07,CSE,3,7.36,F,"Shobha Viswanathan",7230984671,"71, Harmada, Gurgaon - 321925",NULL,A101,9474208583
+1BM18IS001,Nishtha,Muni,nishita,1999-10-13,ISE,3,7.95,F,"Sushmita Dixit",7754307603,"50, Malad, Delhi - 236440",NULL,A202,8143677628
+1BM18IS002,Hina,Balan,hina,1999-06-02,ISE,3,8.02,F,"Nalini Mahadeo",9542317869,"18, Niyati Heights, Aisha Chowk Nashik - 548275",NULL,A202,8081628036
+1BM18IS003,Ananya,Ahluwalia,ananya,1999-04-07,ISE,3,7.81,F,"Chitranjan Narine",9883539051,"36, Bandra, Darjeeling - 323537",NULL,A101,9857753381
+1BM18IS004,Charandeep,Deol,chandra,1999-10-04,ISE,3,8.78,M,"Divya Dhaliwal",8314922117,"49, Kalyani Heights, Marathahalli Jamnagar - 559121",NULL,B202,8026377650
+1BM18IS005,Monin,Mehan,monin,1999-03-15,ISE,3,7.76,F,"Ekbal Sastry",7114461238,"33, Nitin Villas, PravinPur Lucknow - 557607",NULL,A101,8694691903

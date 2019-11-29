@@ -12,8 +12,8 @@ public class MainMenu {
         App.setRoot("wardenLogin");
     }
 
-    public void onAdminButtonClick() throws IOException {
-        App.setRoot("deleteStudentForWarden");
+    public void linkButtonCLick() throws IOException {
+        App.setRoot("availableRooms");
     }
 
     public void onClose() {

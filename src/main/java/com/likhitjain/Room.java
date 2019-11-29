@@ -16,6 +16,10 @@ public class Room {
 
     }
 
+    public Room(String availableRooms) {
+        roomID = availableRooms;
+    }
+
     public String getRoomID() {
         return roomID;
     }

@@ -77,6 +77,7 @@ public class StudentHome {
                 String contact = resultSet.getString("mobile_no");
                 String sem = resultSet.getString("semester");
                 String dept = resultSet.getString("department");
+                System.out.println(fName + lName + dept + sem + contact);
                 RoommateDetailsForStudent.setRoommateDetails(fName, lName, dept, sem, contact);
                 App.setRoot("roommateDetailsForStudent");
             }
@@ -92,6 +93,8 @@ public class StudentHome {
                 String contact2 = resultSet.getString("mobile_no");
                 String sem2 = resultSet.getString("semester");
                 String dept2 = resultSet.getString("department");
+                System.out.println(fName1 + lName1 + dept1 + sem1 + contact1);
+                System.out.println(fName2 + lName2 + dept2 + sem2 + contact2);
                 RoommateDetailsForStudent.setRoommateDetails(fName1, lName1, dept1, sem1, contact1, fName2, lName2, dept2, sem2, contact2);
                 App.setRoot("roommateDetailsForStudent");
             }
@@ -144,7 +147,7 @@ public class StudentHome {
             ApplyForRoom.setStudentUSN(studentUSN);
             App.setRoot("applyForRoom");
         } else {
-            AlertBox.infoBox("You already have a room", "Alert");
+            AlertBox.infoBox(roomID + " has already been allotted to you", "Alert");
         }
     }
 }

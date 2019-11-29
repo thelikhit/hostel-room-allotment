@@ -9,54 +9,57 @@
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.likhitjain.WardenHome">
    <children>
        <MenuBar>
-          <menus>
-              <Menu mnemonicParsing="false" text="File">
-                 <items>
-                     <MenuItem mnemonicParsing="false" onAction="#onLogout" text="Logout" />
-                     <SeparatorMenuItem mnemonicParsing="false" />
-                     <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close" />
-                 </items>
-              </Menu>
-          </menus>
+           <Menu mnemonicParsing="false" text="File">
+               <MenuItem mnemonicParsing="false" onAction="#onLogout" text="Logout"/>
+               <SeparatorMenuItem mnemonicParsing="false"/>
+               <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close"/>
+           </Menu>
        </MenuBar>
        <AnchorPane prefHeight="369.0" prefWidth="600.0">
-          <children>
-              <Button layoutX="30.0" layoutY="265.0" mnemonicParsing="false" onAction="#onSearchByRIDButtonClick" prefHeight="54.0" prefWidth="90.0" text="Search by Room ID" textAlignment="CENTER" wrapText="true">
-                  <font>
-                      <Font size="9.0" />
-                  </font>
-              </Button>
-              <Button layoutX="180.0" layoutY="265.0" mnemonicParsing="false" onAction="#onSearchByUSNButtonClick" prefHeight="54.0" prefWidth="90.0" text="Search by USN" textAlignment="CENTER" wrapText="true">
-                  <font>
-                      <Font size="9.0" />
-                  </font>
-              </Button>
-              <Button layoutX="330.0" layoutY="265.0" mnemonicParsing="false" onAction="#onAvailableRoomsButtonClick" prefHeight="54.0" prefWidth="90.0" text="Check for avaliable rooms" textAlignment="CENTER" wrapText="true">
-                  <font>
-                      <Font size="9.0" />
-                  </font>
-              </Button>
-              <Button layoutX="470.0" layoutY="265.0" mnemonicParsing="false" prefHeight="54.0" onAction="#onDeleteStudentButtonClick" prefWidth="90.0" text="Delete Student" textAlignment="CENTER" wrapText="true">
-                  <font>
-                      <Font size="9.0" />
-                  </font>
-              </Button>
-              <Text fx:id="welcomeDetailsText" layoutX="16.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="321.0" />
-              <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="533.0" layoutY="4.0" pickOnBounds="true"
-                         preserveRatio="true">
-                  <Image url="@../../images/bmsce-logo.png"/>
-              </ImageView>
-              <ImageView fitHeight="172.0" fitWidth="600.0" layoutY="64.0" pickOnBounds="true">
-                 <image>
-                     <Image url="@../../images/hostel.jpg" />
-                 </image>
-              </ImageView>
-              <Text layoutX="16.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello,">
-                  <font>
-                      <Font size="24.0" />
-                  </font>
-              </Text>
-          </children>
+           <Button layoutX="30.0" layoutY="265.0" mnemonicParsing="false" onAction="#onSearchByRIDButtonClick"
+                   prefHeight="54.0" prefWidth="90.0" text="Search by Room ID" textAlignment="CENTER" wrapText="true"
+                   style="-fx-background-color: #87c0f0">
+               <font>
+                   <Font size="9.0"/>
+               </font>
+           </Button>
+           <Button layoutX="180.0" layoutY="265.0" mnemonicParsing="false" onAction="#onSearchByUSNButtonClick"
+                   prefHeight="54.0" prefWidth="90.0" text="Search by USN" textAlignment="CENTER" wrapText="true"
+                   style="-fx-background-color: #87c0f0">
+               <font>
+                   <Font size="9.0"/>
+               </font>
+           </Button>
+           <Button layoutX="330.0" layoutY="265.0" mnemonicParsing="false" onAction="#onAvailableRoomsButtonClick"
+                   prefHeight="54.0" prefWidth="90.0" text="Check for avaliable rooms" textAlignment="CENTER"
+                   wrapText="true" style="-fx-background-color: #87c0f0">
+               <font>
+                   <Font size="9.0"/>
+               </font>
+           </Button>
+           <Button layoutX="470.0" layoutY="265.0" mnemonicParsing="false" prefHeight="54.0"
+                   onAction="#onDeleteStudentButtonClick" prefWidth="90.0" text="Delete Student" textAlignment="CENTER"
+                   wrapText="true" style="-fx-background-color: #87c0f0">
+               <font>
+                   <Font size="9.0"/>
+               </font>
+           </Button>
+           <Text fx:id="welcomeDetailsText" layoutX="16.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                 wrappingWidth="321.0"/>
+           <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="533.0" layoutY="4.0" pickOnBounds="true"
+                      preserveRatio="true">
+               <Image url="@../../images/bmsce-logo.png"/>
+           </ImageView>
+           <ImageView fitHeight="172.0" fitWidth="600.0" layoutY="64.0" pickOnBounds="true">
+               <image>
+                   <Image url="@../../images/hostel.jpg"/>
+               </image>
+           </ImageView>
+           <Text layoutX="16.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello,">
+               <font>
+                   <Font size="24.0"/>
+               </font>
+           </Text>
        </AnchorPane>
    </children>
 </VBox>

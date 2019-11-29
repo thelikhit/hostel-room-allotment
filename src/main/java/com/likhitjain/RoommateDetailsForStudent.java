@@ -38,7 +38,7 @@ public class RoommateDetailsForStudent implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         fNameColumn.setCellValueFactory(new PropertyValueFactory<>("fName"));
         lNameColumn.setCellValueFactory(new PropertyValueFactory<>("lName"));
-        contactColumn.setCellValueFactory(new PropertyValueFactory<>("guardianContact"));
+        contactColumn.setCellValueFactory(new PropertyValueFactory<>("contact"));
         deptColumn.setCellValueFactory(new PropertyValueFactory<>("department"));
         semColumn.setCellValueFactory(new PropertyValueFactory<>("semester"));
 

@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLIntegrityConstraintViolationException;
 
 public class StudentSignup {
 
@@ -94,6 +95,8 @@ public class StudentSignup {
 
         if (!password.getText().equals(confirmPassword.getText())) {
             AlertBox.infoBox("Passwords do not match", "Input Error");
+            password.setStyle("-fx-border-color: red ;");
+            confirmPassword.setStyle("-fx-border-color: red ;");
             return;
         }
 
@@ -140,6 +143,10 @@ public class StudentSignup {
             AlertBox.infoBox("Sign Up Successful", "Success");
             StudentHome.setStudentHelloMessage(fNameText, usnText);
             App.setRoot("studentLogin");
+        }
+        catch (SQLIntegrityConstraintViolationException e) {
+            AlertBox.infoBox("Duplicate Entry for USN", "Failure.");
+            e.printStackTrace();
         }
         catch (Exception e) {
             AlertBox.infoBox("Sign Up failed.", "Failure.");

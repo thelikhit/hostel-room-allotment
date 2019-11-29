@@ -25,7 +25,7 @@
             <PasswordField fx:id="confirmPasswordText" layoutX="214.0" layoutY="188.0"
                            promptText="Confirm Password"/>
             <Button id="register" layoutX="214.0" layoutY="237.0" mnemonicParsing="false"
-                    onAction="#onRegisterButtonClick" text="Register"/>
+                    onAction="#onRegisterButtonClick" text="Register" style="-fx-background-color: #42a45a"/>
             <Text fill="#f80606" layoutX="214.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0"
                   text="Note: All fields are mandatory">
                 <font>

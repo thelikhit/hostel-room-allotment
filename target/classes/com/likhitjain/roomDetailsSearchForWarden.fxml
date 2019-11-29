@@ -33,6 +33,6 @@
             </columns>
         </TableView>
         <Button fx:id="searchButton" layoutX="259.0" layoutY="83.0" mnemonicParsing="false"
-                onAction="#onSearchButtonClick" text="Search"/>
+                onAction="#onSearchButtonClick" text="Search" style="-fx-background-color: #42a45a"/>
     </AnchorPane>
 </VBox>

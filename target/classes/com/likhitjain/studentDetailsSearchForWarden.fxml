@@ -19,7 +19,7 @@
     <AnchorPane prefHeight="368.0" prefWidth="600.0">
         <TextField fx:id="studentUSNText" layoutX="207.0" layoutY="14.0" promptText="Enter Student's USN"/>
         <Button layoutX="268.0" layoutY="48.0" mnemonicParsing="false" onAction="#onSearchButtonClick"
-                text="Search"/>
+                text="Search" style="-fx-background-color: #42a45a"/>
         <TableView fx:id="studentDetailsTable" layoutX="5.0" layoutY="115.0" prefHeight="82.0" prefWidth="592.0">
             <columns>
                 <TableColumn fx:id="usnColumn" prefWidth="75.0" text="USN"/>

@@ -19,7 +19,7 @@
     <AnchorPane prefHeight="369.0" prefWidth="600.0">
         <TableView fx:id="availableRoomsTable" layoutY="6.0" prefHeight="70.0" prefWidth="600.0">
             <columns>
-                <TableColumn fx:id="availableRoomsColumn" prefWidth="600.0" text="Available Rooms"/>
+                <TableColumn fx:id="availableRoomsColumn" prefWidth="600.0" text="Available Rooms" style="-fx-alignment: CENTER"/>
             </columns>
         </TableView>
     </AnchorPane>

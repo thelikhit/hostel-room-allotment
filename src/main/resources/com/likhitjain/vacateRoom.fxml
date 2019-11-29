@@ -21,9 +21,9 @@
               text="Please enter your password to confirm" textAlignment="CENTER" wrappingWidth="308.88671875"/>
         <Text layoutX="251.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
         <Button layoutX="268.0" layoutY="99.0" mnemonicParsing="false" onAction="#onVacateButtonClick"
-                text="Vacate"/>
+                text="Vacate" style="-fx-background-color: #EE4540"/>
         <PasswordField fx:id="vacatedRoomConfirmPassword" layoutX="207.0" layoutY="55.0" promptText="Password"/>
         <Text layoutX="223.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This cannot be undone."
-              textAlignment="CENTER"/>
+              textAlignment="CENTER" fill="#f80606"/>
     </AnchorPane>
 </VBox>

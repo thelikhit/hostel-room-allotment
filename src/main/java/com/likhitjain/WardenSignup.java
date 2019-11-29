@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLIntegrityConstraintViolationException;
 
 
 public class WardenSignup {
@@ -41,21 +42,26 @@ public class WardenSignup {
 
         if (!Validation.validateEID(empIDText.getText().toUpperCase())) {
             AlertBox.infoBox("Enter correct format for Employee ID", "Incorrect format");
+            empIDText.setStyle("-fx-border-color: red ;");
             return;
         }
 
         if (!Validation.validateName(nameText.getText())) {
             AlertBox.infoBox("Enter correct format for name", "Incorrect format");
+            nameText.setStyle("-fx-border-color: red ;");
             return;
         }
 
         if (!Validation.validateMobileNo(mobileNoText.getText())) {
             AlertBox.infoBox("Enter correct format for mobile number", "Incorrect format");
+            mobileNoText.setStyle("-fx-border-color: red ;");
             return;
         }
 
         if (!passwordText.getText().equals(confirmPasswordText.getText())) {
             AlertBox.infoBox("Passwords do not match", "Input Error");
+            passwordText.setStyle("-fx-border-color: red ;");
+            confirmPasswordText.setStyle("-fx-border-color: red ;");
             return;
         }
 
@@ -63,6 +69,11 @@ public class WardenSignup {
         empID = empIDText.getText().toUpperCase();
         mobileNo = mobileNoText.getText();
         password = passwordText.getText();
+
+        if (!AlertBox.textBox("Enter administrator password", "Password").equals("admin")) {
+            AlertBox.infoBox("Admin password is incorrect", "Incorrect Password");
+            return;
+        }
 
         try {
 
@@ -78,7 +89,12 @@ public class WardenSignup {
             AlertBox.infoBox("Sign-up successful.", "Success");
             App.setRoot("wardenLogin");
             connection.close();
-        } catch (Exception e) {
+        }
+        catch (SQLIntegrityConstraintViolationException e) {
+            AlertBox.infoBox("Duplicate Entry for EID", "Failure.");
+            e.printStackTrace();
+        }
+        catch (Exception e) {
             AlertBox.infoBox("Sign-up failed", "Failure");
             e.printStackTrace();
         }

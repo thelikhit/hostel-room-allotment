@@ -78,6 +78,7 @@
                 </FXCollections>
             </items>
         </ComboBox>
-        <Button layoutX="268.0" layoutY="304.0" mnemonicParsing="false" text="Apply" onAction="#onApplyButtonClick"/>
+        <Button layoutX="268.0" layoutY="304.0" mnemonicParsing="false" text="Apply" onAction="#onApplyButtonClick"
+                style="-fx-background-color: #42a45a"/>
     </AnchorPane>
 </VBox>

@@ -1,0 +1,7 @@
+r_type_id,occupancy,bathroom,fees,room_desc
+RT10,1,N,230000,"Single Occupancy without an attached bathroom"
+RT11,1,Y,250000,"Single Occupancy with an attached bathroom"
+RT20,2,N,150000,"Double Occupancy without an attached bathroom"
+RT21,2,Y,180000,"Double Occupancy with an attached bathroom"
+RT30,3,N,110000,"Triple Occupancy without an attached bathroom"
+RT31,3,Y,130000,"Triple Occupancy with an attached bathroom"

@@ -13,15 +13,17 @@ class ConnectionManager {
             String DRIVER = "com.mysql.cj.jdbc.Driver";
             Class.forName(DRIVER);
             try {
-                String URL = "jdbc:mysql://localhost:3306/Hostel";
+                String URL = "jdbc:mysql://localhost:3306/hostel";
                 String USERNAME = "root";
                 String PASSWORD = "1998";
                 connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             } catch (SQLException e) {
                 System.out.println("Failed to create the database connection.");
+                e.printStackTrace();
             }
         } catch (ClassNotFoundException e) {
             System.out.println("Driver not found.");
+            e.printStackTrace();
         }
         return connection;
     }

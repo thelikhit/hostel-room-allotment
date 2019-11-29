@@ -48,7 +48,7 @@
             <PasswordField fx:id="confirmPassword" layoutX="214.0" layoutY="457.0"
                            promptText="Confirm Password"/>
             <Button fx:id="register" layoutX="214.0" layoutY="499.0" mnemonicParsing="false" text="Register"
-                    onAction="#onRegisterButtonClick"/>
+                    onAction="#onRegisterButtonClick" style="-fx-background-color: #42a45a"/>
             <ComboBox fx:id="department" layoutX="213.0" layoutY="157.0" prefWidth="150.0"
                       promptText="Department">
                 <items>
