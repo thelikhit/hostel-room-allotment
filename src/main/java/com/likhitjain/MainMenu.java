@@ -12,10 +12,6 @@ public class MainMenu {
         App.setRoot("wardenLogin");
     }
 
-    public void linkButtonCLick() throws IOException {
-        App.setRoot("availableRooms");
-    }
-
     public void onClose() {
         System.exit(0);
     }
